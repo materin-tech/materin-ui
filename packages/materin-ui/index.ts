@@ -18,6 +18,7 @@ import type { App } from 'vue'
 
 declare const __MI_VERSION__: string
 
+import MiAlert from '../components/alert'
 import MiAside from '../components/aside'
 import MiAvatar from '../components/avatar'
 import MiBadge from '../components/badge'
@@ -27,7 +28,9 @@ import MiCheckbox from '../components/checkbox'
 import MiCheckboxGroup from '../components/checkbox-group'
 import MiCol from '../components/col'
 import MiContainer from '../components/container'
+import MiDialog from '../components/dialog'
 import MiDivider from '../components/divider'
+import MiDrawer from '../components/drawer'
 import MiEmpty from '../components/empty'
 import MiFooter from '../components/footer'
 import MiForm from '../components/form'
@@ -36,9 +39,16 @@ import MiHeader from '../components/header'
 import MiInput from '../components/input'
 import MiInputNumber from '../components/input-number'
 import MiLink from '../components/link'
+import MiLoading from '../components/loading'
 import MiMain from '../components/main'
+import MiMessage from '../components/message'
+import MiMessageItem from '../components/message-item'
+import MiNotification from '../components/notification'
+import MiNotificationItem from '../components/notification-item'
 import MiOption from '../components/option'
 import MiOptionGroup from '../components/option-group'
+import MiPopconfirm from '../components/popconfirm'
+import MiPopover from '../components/popover'
 import MiRadio from '../components/radio'
 import MiRadioGroup from '../components/radio-group'
 import MiRate from '../components/rate'
@@ -52,22 +62,27 @@ import MiSwitch from '../components/switch'
 import MiTag from '../components/tag'
 import MiText from '../components/text'
 import MiTitle from '../components/title'
+import MiTooltip from '../components/tooltip'
+import MiTour from '../components/tour'
 
-const components = [MiAside, MiAvatar, MiBadge, MiButton, MiCard, MiCheckbox, MiCheckboxGroup, MiCol, MiContainer, MiDivider, MiEmpty, MiFooter, MiForm, MiFormItem, MiHeader, MiInput, MiInputNumber, MiLink, MiMain, MiOption, MiOptionGroup, MiRadio, MiRadioGroup, MiRate, MiRow, MiSelect, MiSkeleton, MiSkeletonItem, MiSlider, MiSpace, MiSwitch, MiTag, MiText, MiTitle]
+const components = [MiAlert, MiAside, MiAvatar, MiBadge, MiButton, MiCard, MiCheckbox, MiCheckboxGroup, MiCol, MiContainer, MiDialog, MiDivider, MiDrawer, MiEmpty, MiFooter, MiForm, MiFormItem, MiHeader, MiInput, MiInputNumber, MiLink, MiLoading, MiMain, MiMessage, MiMessageItem, MiNotification, MiNotificationItem, MiOption, MiOptionGroup, MiPopconfirm, MiPopover, MiRadio, MiRadioGroup, MiRate, MiRow, MiSelect, MiSkeleton, MiSkeletonItem, MiSlider, MiSpace, MiSwitch, MiTag, MiText, MiTitle, MiTooltip, MiTour]
 
 const install = (app: App): void => {
   components.forEach((component) => {
+    // 命令式服务（如 MiMessage / MiNotification）是函数，不是组件，不注册
+    if (typeof component === 'function') return
     app.component(component.name || component.__name || 'MiComponent', component)
   })
 }
 
-export {MiAside, MiAvatar, MiBadge, MiButton, MiCard, MiCheckbox, MiCheckboxGroup, MiCol, MiContainer, MiDivider, MiEmpty, MiFooter, MiForm, MiFormItem, MiHeader, MiInput, MiInputNumber, MiLink, MiMain, MiOption, MiOptionGroup, MiRadio, MiRadioGroup, MiRate, MiRow, MiSelect, MiSkeleton, MiSkeletonItem, MiSlider, MiSpace, MiSwitch, MiTag, MiText, MiTitle}
+export {MiAlert, MiAside, MiAvatar, MiBadge, MiButton, MiCard, MiCheckbox, MiCheckboxGroup, MiCol, MiContainer, MiDialog, MiDivider, MiDrawer, MiEmpty, MiFooter, MiForm, MiFormItem, MiHeader, MiInput, MiInputNumber, MiLink, MiLoading, MiMain, MiMessage, MiMessageItem, MiNotification, MiNotificationItem, MiOption, MiOptionGroup, MiPopconfirm, MiPopover, MiRadio, MiRadioGroup, MiRate, MiRow, MiSelect, MiSkeleton, MiSkeletonItem, MiSlider, MiSpace, MiSwitch, MiTag, MiText, MiTitle, MiTooltip, MiTour}
 
 export default {
   install,
   version: typeof __MI_VERSION__ === 'string' ? __MI_VERSION__ : '0.0.0-dev'
 }
 
+export type { AlertProps, AlertType } from '../components/alert/types'
 export type { AsideProps } from '../components/aside/types'
 export type { AvatarProps, AvatarSize } from '../components/avatar/types'
 export type { BadgeProps, BadgeType } from '../components/badge/types'
@@ -77,7 +92,9 @@ export type { CheckboxProps } from '../components/checkbox/types'
 export type { CheckboxGroupProps } from '../components/checkbox-group/types'
 export type { ColProps, ColSize } from '../components/col/types'
 export type { ContainerProps } from '../components/container/types'
+export type { DialogProps } from '../components/dialog/types'
 export type { DividerProps } from '../components/divider/types'
+export type { DrawerProps } from '../components/drawer/types'
 export type { EmptyProps } from '../components/empty/types'
 export type { FooterProps } from '../components/footer/types'
 export type { FormProps, FormRule } from '../components/form/types'
@@ -86,9 +103,13 @@ export type { HeaderProps } from '../components/header/types'
 export type { InputProps, InputEmits } from '../components/input/types'
 export type { InputNumberProps } from '../components/input-number/types'
 export type { LinkProps, LinkType } from '../components/link/types'
+export type { LoadingProps } from '../components/loading/types'
 export type { MainProps } from '../components/main/types'
+export type { MessageHandle, MessageOptions, MessageRecord, MessageType } from '../components/message/types'
 export type { OptionProps } from '../components/option/types'
 export type { OptionGroupProps } from '../components/option-group/types'
+export type { PopconfirmProps } from '../components/popconfirm/types'
+export type { PopoverProps } from '../components/popover/types'
 export type { RadioProps } from '../components/radio/types'
 export type { RadioGroupProps } from '../components/radio-group/types'
 export type { RateProps } from '../components/rate/types'
@@ -102,3 +123,5 @@ export type { SwitchProps } from '../components/switch/types'
 export type { TagProps, TagEmits } from '../components/tag/types'
 export type { TextProps, TextType, TextSize } from '../components/text/types'
 export type { TitleProps, TitleType } from '../components/title/types'
+export type { TooltipProps } from '../components/tooltip/types'
+export type { TourProps, TourStep } from '../components/tour/types'

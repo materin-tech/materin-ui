@@ -411,19 +411,19 @@
         {
           "materin": "MiAlert",
           "element_plus": "Alert",
-          "status": "planned",
+          "status": "done",
           "note": "提示条"
         },
         {
           "materin": "MiLoading",
           "element_plus": "Loading",
-          "status": "planned",
+          "status": "done",
           "note": "加载"
         },
         {
           "materin": "MiMessage",
           "element_plus": "Message",
-          "status": "planned",
+          "status": "done",
           "note": "消息"
         },
         {
@@ -435,43 +435,43 @@
         {
           "materin": "MiNotification",
           "element_plus": "Notification",
-          "status": "planned",
+          "status": "done",
           "note": "通知"
         },
         {
           "materin": "MiPopover",
           "element_plus": "Popover",
-          "status": "planned",
+          "status": "done",
           "note": "气泡卡片"
         },
         {
           "materin": "MiTooltip",
           "element_plus": "Tooltip",
-          "status": "planned",
+          "status": "done",
           "note": "文字提示"
         },
         {
           "materin": "MiDialog",
           "element_plus": "Dialog",
-          "status": "planned",
+          "status": "done",
           "note": "对话框"
         },
         {
           "materin": "MiDrawer",
           "element_plus": "Drawer",
-          "status": "planned",
+          "status": "done",
           "note": "抽屉"
         },
         {
           "materin": "MiPopconfirm",
           "element_plus": "Popconfirm",
-          "status": "planned",
+          "status": "done",
           "note": "气泡确认"
         },
         {
           "materin": "MiTour",
           "element_plus": "Tour",
-          "status": "planned",
+          "status": "done",
           "note": "漫游引导"
         }
       ]
@@ -625,7 +625,7 @@
     "element_plus_scope": 92,
     "materin_scope": 97,
     "extras_beyond_element_plus": 5,
-    "done": 34,
-    "planned": 63
+    "done": 44,
+    "planned": 53
   }
 }

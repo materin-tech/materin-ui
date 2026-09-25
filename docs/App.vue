@@ -11,6 +11,7 @@
         <a href="#components">{{ t('组件', 'Components') }}</a>
         <a href="#layout">{{ t('布局与基础', 'Layout') }}</a>
         <a href="#form">{{ t('表单', 'Forms') }}</a>
+        <a href="#feedback">{{ t('反馈', 'Feedback') }}</a>
         <a href="#contract">{{ t('命名契约', 'Contract') }}</a>
         <button class="materin-docs-toggle" type="button" @click="toggleLang">{{ lang === 'zh' ? 'EN' : '中' }}</button>
         <button class="materin-docs-toggle" type="button" :aria-label="t('切换主题', 'Toggle theme')" @click="toggleTheme">
@@ -186,6 +187,7 @@
   <ComponentsLayer :lang="lang" />
 
   <FormSection :lang="lang" />
+  <FeedbackSection :lang="lang" />
 
   <section id="contract" class="materin-docs-section">
     <div class="materin-docs-wrap">
@@ -225,6 +227,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { MiButton, MiCard, MiInput, MiTag } from '@/materin-ui/index'
 import ComponentsLayer from './sections/ComponentsLayer.vue'
+import FeedbackSection from './sections/FeedbackSection.vue'
 import FormSection from './sections/FormSection.vue'
 
 declare const __MI_VERSION__: string

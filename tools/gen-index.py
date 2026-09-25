@@ -16,11 +16,15 @@ for d in sorted(COMP.iterdir()):
         continue
     text = idx.read_text(encoding="utf-8")
     m = re.search(r"export \{ default as (Mi\w+) \}", text)
-    if not m:
-        m = re.search(r"\b(\w+) as (Mi\w+) \}", text)
-        names = [m.group(2)] if m else []
-    else:
+    if m:
         names = [m.group(1)]
+    else:
+        m = re.search(r"\b\w+ as (Mi\w+) \}", text)
+        if m:
+            names = [m.group(1)]
+        else:
+            m = re.search(r"export \{ (Mi\w+)[,\s}]", text)
+            names = [m.group(1)] if m else []
     if not m:
         continue
     t = re.search(r"export type \{ ([^}]+) \}", text)
@@ -63,6 +67,8 @@ const components = [{names}]
 
 const install = (app: App): void => {{
   components.forEach((component) => {{
+    // 命令式服务（如 MiMessage / MiNotification）是函数，不是组件，不注册
+    if (typeof component === 'function') return
     app.component(component.name || component.__name || 'MiComponent', component)
   }})
 }}

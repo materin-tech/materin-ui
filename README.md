@@ -43,6 +43,10 @@
 | 基础 | Badge / Avatar | `materin-ui-badge` / `materin-ui-avatar` |
 | 展示 | Skeleton / SkeletonItem / Empty | `materin-ui-skeleton` / `materin-ui-skeleton-item` / `materin-ui-empty` |
 | 展示 | Card | `materin-ui-card` |
+| 反馈 | Alert / Loading | `materin-ui-alert` / `materin-ui-loading` |
+| 反馈 | Tooltip / Popover / Popconfirm | `materin-ui-tooltip` / `materin-ui-popover` / `materin-ui-popconfirm` |
+| 反馈 | Dialog / Drawer / Tour | `materin-ui-dialog` / `materin-ui-drawer` / `materin-ui-tour` |
+| 反馈 | Message / Notification（命令式） | `materin-ui-message` / `materin-ui-notification` |
 | 表单 | Form / FormItem | `materin-ui-form` / `materin-ui-form-item` |
 | 表单 | Input 输入框 | `materin-ui-field` |
 | 表单 | InputNumber / Slider / Rate | `materin-ui-input-number` / `materin-ui-slider` / `materin-ui-rate` |

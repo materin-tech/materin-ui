@@ -1,6 +1,6 @@
 {
   "name": "@materin-tech/materin-ui",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Materin UI · Vue 3 组件库 — 与组织站点和 Obsidian 插件共用一套令牌与命名契约",
   "type": "module",
   "main": "dist/index.js",
