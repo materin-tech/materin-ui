@@ -280,7 +280,7 @@
         {
           "materin": "MiProgress",
           "element_plus": "Progress",
-          "status": "planned",
+          "status": "done",
           "note": "进度条"
         },
         {
@@ -298,7 +298,7 @@
         {
           "materin": "MiPagination",
           "element_plus": "Pagination",
-          "status": "planned",
+          "status": "done",
           "note": "分页"
         },
         {
@@ -334,13 +334,13 @@
         {
           "materin": "MiDescriptions",
           "element_plus": "Descriptions",
-          "status": "planned",
+          "status": "done",
           "note": "描述列表"
         },
         {
           "materin": "MiResult",
           "element_plus": "Result",
-          "status": "planned",
+          "status": "done",
           "note": "结果页"
         },
         {
@@ -352,19 +352,19 @@
         {
           "materin": "MiStatistic",
           "element_plus": "Statistic",
-          "status": "planned",
+          "status": "done",
           "note": "统计数值"
         },
         {
           "materin": "MiCollapse",
           "element_plus": "Collapse",
-          "status": "planned",
+          "status": "done",
           "note": "折叠面板"
         },
         {
           "materin": "MiTimeline",
           "element_plus": "Timeline",
-          "status": "planned",
+          "status": "done",
           "note": "时间线"
         },
         {
@@ -376,7 +376,7 @@
         {
           "materin": "MiImage",
           "element_plus": "Image",
-          "status": "planned",
+          "status": "done",
           "note": "图片"
         },
         {
@@ -388,7 +388,7 @@
         {
           "materin": "MiSegmented",
           "element_plus": "Segmented",
-          "status": "planned",
+          "status": "done",
           "note": "分段控制"
         },
         {
@@ -625,7 +625,7 @@
     "element_plus_scope": 92,
     "materin_scope": 97,
     "extras_beyond_element_plus": 5,
-    "done": 44,
-    "planned": 53
+    "done": 53,
+    "planned": 44
   }
 }

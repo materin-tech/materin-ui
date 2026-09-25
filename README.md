@@ -43,6 +43,8 @@
 | 基础 | Badge / Avatar | `materin-ui-badge` / `materin-ui-avatar` |
 | 展示 | Skeleton / SkeletonItem / Empty | `materin-ui-skeleton` / `materin-ui-skeleton-item` / `materin-ui-empty` |
 | 展示 | Card | `materin-ui-card` |
+| 数据 | Progress / Statistic / Descriptions / Result | `materin-ui-progress` / `materin-ui-statistic` / `materin-ui-descriptions` / `materin-ui-result` |
+| 数据 | Collapse / Timeline / Pagination / Segmented / Image | `materin-ui-collapse` / `materin-ui-timeline` / `materin-ui-pagination` / `materin-ui-segmented` / `materin-ui-image` |
 | 反馈 | Alert / Loading | `materin-ui-alert` / `materin-ui-loading` |
 | 反馈 | Tooltip / Popover / Popconfirm | `materin-ui-tooltip` / `materin-ui-popover` / `materin-ui-popconfirm` |
 | 反馈 | Dialog / Drawer / Tour | `materin-ui-dialog` / `materin-ui-drawer` / `materin-ui-tour` |
