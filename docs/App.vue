@@ -211,7 +211,8 @@
 import { computed, onMounted, ref } from 'vue'
 import { MiButton, MiCard, MiInput, MiTag } from '@/materin-ui/index'
 
-const version = '0.2.0'
+declare const __MI_VERSION__: string
+const version = __MI_VERSION__
 
 /* 语言与主题：与组织站点一致的做法（localStorage 记忆，属性驱动样式） */
 const lang = ref<'zh' | 'en'>('zh')
