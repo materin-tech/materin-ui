@@ -118,3 +118,322 @@ code, pre, kbd { font-family: $materin-font-mono; }
   .materin-docs-hero h1 { font-size: $materin-font-size-h1; }
   .materin-docs-nav { gap: $materin-space-3; }
 }
+
+// ---- 多页文档站布局 ----
+
+.materin-docs-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.materin-docs-shell {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-start;
+}
+
+.materin-docs-sidebar {
+  position: sticky;
+  top: 57px;
+  flex: 0 0 230px;
+  max-height: calc(100vh - 57px);
+  padding: $materin-space-4 $materin-space-3;
+  border-right: 1px solid var(--materin-border);
+  overflow: auto;
+
+  &__search {
+    width: 100%;
+    padding: $materin-space-2 $materin-space-3;
+    border: 1px solid var(--materin-border);
+    border-radius: var(--materin-radius);
+    background: var(--materin-surface-3);
+    color: var(--materin-text);
+    font-size: var(--materin-font-size-small);
+    outline: none;
+
+    &:focus {
+      border-color: var(--materin-accent-border);
+    }
+  }
+
+  &__nav {
+    margin-top: $materin-space-3;
+  }
+
+  &__group {
+    margin-bottom: $materin-space-3;
+  }
+
+  &__group-title {
+    margin: 0 0 $materin-space-1;
+    padding: 0 $materin-space-2;
+    color: var(--materin-text-faint);
+    font-size: var(--materin-font-size-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__link {
+    display: block;
+    padding: $materin-space-1 $materin-space-2;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--materin-radius) var(--materin-radius) 0;
+    color: var(--materin-text-muted);
+    font-size: var(--materin-font-size-small);
+    text-decoration: none;
+
+    &:hover {
+      background: var(--materin-surface-4);
+      color: var(--materin-text);
+    }
+
+    &.is-active {
+      border-left-color: var(--materin-accent);
+      background: var(--materin-accent-soft);
+      color: var(--materin-accent);
+    }
+  }
+
+  @media (max-width: 900px) {
+    position: fixed;
+    top: 57px;
+    bottom: 0;
+    left: 0;
+    z-index: 60;
+    display: none;
+    background: var(--materin-surface-2);
+
+    &.is-open {
+      display: block;
+    }
+  }
+}
+
+.materin-docs-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgb(0 0 0 / 40%);
+}
+
+.materin-docs-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.materin-docs-header__burger {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--materin-text);
+  font-size: 18px;
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    display: inline-flex;
+  }
+}
+
+.materin-docs-header__links {
+  display: flex;
+  gap: $materin-space-4;
+
+  a {
+    color: var(--materin-text-muted);
+    font-size: var(--materin-font-size-small);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--materin-text);
+    }
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+// 组件页
+.materin-docs-component__group {
+  margin: 0 0 $materin-space-2;
+  color: var(--materin-accent);
+  font-size: var(--materin-font-size-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.materin-docs-component__purpose {
+  max-width: 560px;
+  color: var(--materin-text-muted);
+}
+
+.materin-docs-component__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $materin-space-2;
+  margin-top: $materin-space-3;
+}
+
+.materin-docs-component__klass,
+.materin-docs-component__export {
+  padding: 2px $materin-space-2;
+  border: 1px solid var(--materin-border);
+  border-radius: var(--materin-radius);
+  background: var(--materin-surface-3);
+  color: var(--materin-text-muted);
+  font-size: var(--materin-font-size-caption);
+}
+
+.materin-docs-component__none {
+  color: var(--materin-text-faint);
+  font-size: var(--materin-font-size-small);
+}
+
+// API 表
+.materin-docs-api {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--materin-font-size-small);
+
+  th,
+  td {
+    padding: $materin-space-2 $materin-space-3;
+    border-bottom: 1px solid var(--materin-border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--materin-text-muted);
+    font-weight: var(--materin-font-weight-medium);
+  }
+
+  td:first-child code {
+    color: var(--materin-accent);
+  }
+
+  code {
+    font-family: var(--materin-font-mono, monospace);
+    font-size: var(--materin-font-size-caption);
+  }
+}
+
+// 类名契约
+.materin-docs-contract {
+  margin: 0;
+
+  &__row {
+    display: flex;
+    gap: $materin-space-3;
+    padding: $materin-space-2 0;
+    border-bottom: 1px solid var(--materin-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  dt {
+    flex: 0 0 64px;
+    color: var(--materin-text-faint);
+    font-size: var(--materin-font-size-small);
+  }
+
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $materin-space-2;
+    margin: 0;
+
+    code {
+      padding: 1px $materin-space-2;
+      border: 1px solid var(--materin-border);
+      border-radius: var(--materin-radius);
+      background: var(--materin-surface-3);
+      color: var(--materin-text);
+      font-size: var(--materin-font-size-caption);
+    }
+  }
+}
+
+// 总览卡片墙
+.materin-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: $materin-space-3;
+}
+
+.materin-docs-cell {
+  display: flex;
+  flex-direction: column;
+  gap: $materin-space-1;
+  padding: $materin-space-3 $materin-space-4;
+  border: 1px solid var(--materin-border);
+  border-radius: var(--materin-radius-lg);
+  background: var(--materin-surface-2);
+  text-decoration: none;
+  transition: all var(--materin-duration-fast) var(--materin-ease-standard);
+
+  &:hover {
+    border-color: var(--materin-accent-border);
+    transform: translateY(-1px);
+  }
+
+  &__name {
+    color: var(--materin-text);
+    font-size: var(--materin-font-size-body);
+    font-weight: var(--materin-font-weight-medium);
+  }
+
+  &__klass {
+    color: var(--materin-text-faint);
+    font-family: var(--materin-font-mono, monospace);
+    font-size: var(--materin-font-size-caption);
+  }
+}
+
+// 上下页
+.materin-docs-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: $materin-space-3;
+  margin-top: $materin-space-5;
+  padding-top: $materin-space-4;
+  border-top: 1px solid var(--materin-border);
+
+  a {
+    color: var(--materin-accent);
+    font-size: var(--materin-font-size-small);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.materin-docs-demo__fallback {
+  color: var(--materin-text-faint);
+  font-size: var(--materin-font-size-small);
+}
+
+// 令牌页行
+.materin-docs-token-row {
+  display: flex;
+  align-items: center;
+  gap: $materin-space-3;
+  padding: $materin-space-2 0;
+  border-bottom: 1px solid var(--materin-border);
+
+  code {
+    min-width: 220px;
+    color: var(--materin-text);
+    font-size: var(--materin-font-size-caption);
+  }
+
+  span:last-child {
+    color: var(--materin-text-faint);
+    font-size: var(--materin-font-size-caption);
+  }
+}
