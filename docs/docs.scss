@@ -214,7 +214,7 @@ code, pre, kbd { font-family: $materin-font-mono; }
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgb(0 0 0 / 40%);
+  background: color-mix(in srgb, var(--materin-surface) 60%, transparent);
 }
 
 .materin-docs-main {
@@ -435,5 +435,21 @@ code, pre, kbd { font-family: $materin-font-mono; }
   span:last-child {
     color: var(--materin-text-faint);
     font-size: var(--materin-font-size-caption);
+  }
+}
+
+// 语言切换按钮（App.vue 头部）
+.materin-docs-toggle__option {
+  padding: $materin-space-1 $materin-space-2;
+  border: none;
+  border-radius: var(--materin-radius);
+  background: transparent;
+  color: var(--materin-text-muted);
+  font-size: var(--materin-font-size-caption);
+  cursor: pointer;
+
+  &.is-active {
+    background: var(--materin-surface-4);
+    color: var(--materin-text);
   }
 }

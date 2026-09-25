@@ -175,6 +175,8 @@ def main():
             unmapped.append(kebab)
             continue
         gid, zh, en = COMPONENTS[kebab]
+        # 配置型/命令式组件自身无样式类，文档页展示宿主类
+        HOST_KLASS = {"message-box": "materin-ui-dialog", "table-column": "materin-ui-table"}
         text = idx.read_text(encoding="utf-8")
         names = re.findall(r"export\s+\{([^}]+)\}", text)
         exports = []
@@ -182,13 +184,16 @@ def main():
             exports += [x.strip().split(" as ")[-1] for x in chunk.split(",") if x.strip()]
         exports = [x for x in exports if x.startswith("Mi")]
         entry = by_file.get(kebab, {})
+        # 配置型/命令式组件本身无类名，展示宿主类
+        if entry and not entry.get("parts") and not entry.get("variants") and entry.get("name") in ("materin-ui-message-box", "materin-ui-table-column"):
+            entry = dict(entry, name="materin-ui-dialog" if kebab == "message-box" else "materin-ui-table")
         types_ts = (d / "types.ts").read_text(encoding="utf-8") if (d / "types.ts").exists() else ""
         groups_out[[g["id"] for g in groups_out].index(gid)]["components"].append({
             "kebab": kebab,
             "zh": zh,
             "en": en,
             "exports": exports,
-            "klass": entry.get("name", f"materin-ui-{kebab}"),
+            "klass": HOST_KLASS.get(kebab, entry.get("name", f"materin-ui-{kebab}")),
             "purpose": entry.get("purpose", {"zh": "", "en": ""}),
             "parts": entry.get("parts", []),
             "variants": entry.get("variants", []),

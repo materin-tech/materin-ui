@@ -2203,7 +2203,7 @@ export const groups: DocGroup[] = [
         "exports": [
           "MiMessageBox"
         ],
-        "klass": "materin-ui-message-box",
+        "klass": "materin-ui-dialog",
         "purpose": {
           "zh": "",
           "en": ""
@@ -3661,7 +3661,7 @@ export const groups: DocGroup[] = [
         "exports": [
           "MiTableColumn"
         ],
-        "klass": "materin-ui-table-column",
+        "klass": "materin-ui-table",
         "purpose": {
           "zh": "",
           "en": ""
