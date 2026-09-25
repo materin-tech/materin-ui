@@ -641,8 +641,8 @@ export const groups: DocGroup[] = [
       },
       {
         "kebab": "container",
-        "zh": "容器（Header/Aside/Main/Footer）",
-        "en": "Container family",
+        "zh": "容器",
+        "en": "Container",
         "exports": [
           "MiContainer"
         ],

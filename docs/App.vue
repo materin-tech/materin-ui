@@ -4,6 +4,7 @@ import { groups } from './manifest'
 import HomePage from './pages/HomePage.vue'
 import ComponentPage from './pages/ComponentPage.vue'
 import TokensPage from './pages/TokensPage.vue'
+import ComponentsPage from './pages/ComponentsPage.vue'
 
 type Lang = 'zh' | 'en'
 
@@ -31,6 +32,7 @@ const parsed = computed(() => {
     if (component) return { name: 'component' as const, component }
   }
   if (route.value === '/tokens') return { name: 'tokens' as const, component: null }
+  if (route.value === '/components') return { name: 'components' as const, component: null }
   return { name: 'home' as const, component: null }
 })
 
@@ -73,7 +75,7 @@ const version = __MI_VERSION__
         <nav class="materin-docs-header__links">
           <a href="#/">{{ t('总览', 'Overview') }}</a>
           <a href="#/tokens">{{ t('令牌', 'Tokens') }}</a>
-          <a href="#/component/button">{{ t('组件', 'Components') }}</a>
+          <a href="#/components">{{ t('组件', 'Components') }}</a>
         </nav>
         <div class="materin-docs-toggle">
           <button
@@ -124,6 +126,7 @@ const version = __MI_VERSION__
       <main class="materin-docs-main">
         <HomePage v-if="parsed.name === 'home'" :lang="lang" />
         <TokensPage v-else-if="parsed.name === 'tokens'" :lang="lang" />
+        <ComponentsPage v-else-if="parsed.name === 'components'" :lang="lang" />
         <ComponentPage v-else-if="current" :key="current.kebab" :component="current" :lang="lang" />
 
         <footer class="materin-docs-footer">

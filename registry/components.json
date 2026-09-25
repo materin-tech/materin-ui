@@ -80,6 +80,7 @@
         "materin-docs-contract",
         "materin-docs-contract__row",
         "materin-docs-demo__fallback",
+        "materin-docs-gallery",
         "materin-docs-grid",
         "materin-docs-header__burger",
         "materin-docs-header__links",
@@ -94,6 +95,10 @@
         "materin-docs-sidebar__link",
         "materin-docs-sidebar__nav",
         "materin-docs-sidebar__search",
+        "materin-docs-thumb",
+        "materin-docs-thumb__klass",
+        "materin-docs-thumb__name",
+        "materin-docs-thumb__preview",
         "materin-docs-toggle__option",
         "materin-docs-token-row"
       ],

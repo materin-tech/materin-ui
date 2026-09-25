@@ -21,11 +21,8 @@
         <h2>{{ t(g.zh, g.en) }}</h2>
         <p>{{ g.components.length }} {{ t('个组件', 'components') }}</p>
       </div>
-      <div class="materin-docs-grid">
-        <a v-for="c in g.components" :key="c.kebab" class="materin-docs-cell" :href="`#/component/${c.kebab}`">
-          <span class="materin-docs-cell__name">{{ t(c.zh, c.en) }}</span>
-          <span class="materin-docs-cell__klass">{{ c.klass }}</span>
-        </a>
+      <div class="materin-docs-gallery">
+        <ComponentThumb v-for="c in g.components" :key="c.kebab" :component="c" :lang="lang" />
       </div>
     </section>
   </section>
@@ -34,6 +31,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { MiButton } from '@/materin-ui/index'
+import ComponentThumb from '../demos/ComponentThumb.vue'
 import { groups } from '../manifest'
 
 const props = withDefaults(defineProps<{ lang?: 'zh' | 'en' }>(), { lang: 'zh' })

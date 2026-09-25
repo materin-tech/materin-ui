@@ -499,3 +499,70 @@ code, pre, kbd { font-family: $materin-font-mono; }
   line-height: 1.7;
   overflow-x: auto;
 }
+
+// 组件总览：图文卡片墙
+.materin-docs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: $materin-space-3;
+}
+
+.materin-docs-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: $materin-space-2;
+  padding: $materin-space-4 $materin-space-3 $materin-space-3;
+  border: 1px solid var(--materin-border);
+  border-radius: var(--materin-radius-lg);
+  background: var(--materin-surface-2);
+  text-decoration: none;
+  transition: all var(--materin-duration-fast) var(--materin-ease-standard);
+
+  &:hover {
+    border-color: var(--materin-accent-border);
+    transform: translateY(-2px);
+    box-shadow: var(--materin-elev-1);
+  }
+
+  // 预览舞台：固定高度，内容居中，缩放统一
+  &__preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+    border-radius: var(--materin-radius);
+    background: var(--materin-surface-4);
+    overflow: hidden;
+  }
+
+  &__name {
+    color: var(--materin-text);
+    font-size: var(--materin-font-size-small);
+    font-weight: var(--materin-font-weight-medium);
+  }
+
+  &__klass {
+    color: var(--materin-text-faint);
+    font-family: var(--materin-font-mono, monospace);
+    font-size: var(--materin-font-size-caption);
+  }
+}
+
+// 侧栏滚动条细化（与主区一致）
+.materin-docs-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--materin-border) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--materin-border);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

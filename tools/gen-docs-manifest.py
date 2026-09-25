@@ -36,7 +36,7 @@ COMPONENTS = {
     "divider": ("basic", "分割线", "Divider"),
     "space": ("basic", "间距", "Space"),
     # 布局
-    "container": ("layout", "容器（Header/Aside/Main/Footer）", "Container family"),
+    "container": ("layout", "容器", "Container"),
     "row": ("layout", "栅格", "Row"),
     "page-shell": ("layout", "页面骨架", "Page shell"),
     "splitter": ("layout", "分栏", "Splitter"),
