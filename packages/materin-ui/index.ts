@@ -14,7 +14,7 @@
  * 本文件由 tools/gen-index.py 生成（新增组件后重跑），不要手改 import 列表。
  */
 
-import type { App } from 'vue'
+import type { App, Component } from 'vue'
 
 declare const __MI_VERSION__: string
 
@@ -71,7 +71,8 @@ const install = (app: App): void => {
   components.forEach((component) => {
     // 命令式服务（如 MiMessage / MiNotification）是函数，不是组件，不注册
     if (typeof component === 'function') return
-    app.component(component.name || component.__name || 'MiComponent', component)
+    const named = component as unknown as { name?: string; __name?: string }
+    app.component(named.name || named.__name || 'MiComponent', component as unknown as Component)
   })
 }
 
