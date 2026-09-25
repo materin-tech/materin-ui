@@ -51,3 +51,15 @@
 - 令牌补齐：只在 SCSS 里存在的 25 个（动效 / 字阶 / 间距 6、7 / 语义别名）已进 CSS 正本
 - 命名契约新增 `docs` scope（六档：ui / site / docs / office / view / ctx）；文档站 12 个组件入清单
 - 校验脚本：扫 `.vue`/`.scss`（含 SCSS 嵌套 `&--variant`）、排除构建产物、修 3 处自身 bug
+## 0.3.0 — 2026-09
+组件库从 4 个扩到 **21 个**，并立下「对标 Element Plus 全覆盖」的清单。
+
+- 新增布局层：Container / Header / Aside / Main / Footer / Row / Col / Space / Divider
+  - 容器方向自动判定（Aside 挂载即转横向）、24 栅格（span / offset / order + xs~xl 断点）、
+    间距与分割线（横竖、三种线型、文字位置）
+- 新增基础与展示层：Link / Text / Title / Badge / Avatar / Skeleton / SkeletonItem / Empty
+- 新增 `registry/roadmap.json`：97 项目标清单（覆盖 Element Plus 92 项 + 本系列额外的 5 件：
+  复制按钮 / HTTP 方法徽标 / 状态点 / 毛玻璃面板 / 页面骨架），已完成与待做一目了然
+- 新增 `tools/gen-index.py`：库主入口按组件目录自动生成，新增组件不必手改 import
+- 新增唤醒式响应：`_shared/breakpoint.ts`（客户端断点，ResizeObserver 于窗口 resize 去抖 80ms）
+- 全部组件只引用令牌、零裸色值，并登记进 `registry/components.json`（校验脚本作为门禁）

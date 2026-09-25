@@ -14,6 +14,8 @@
 | `tokens/materin-ui.css` | 唯一改风格的地方。取值规则是「先宿主、后品牌」 |
 | `registry/components.json` | 组件清单（名字 / 范围 / 用途 / 部件 / 变体 / 状态 / 仓库） |
 | `tools/check-components.py` | 八项契约检查 + 令牌存在性校验 + SCSS 镜像对账（含 `.vue`/`.scss`） |
+| `registry/roadmap.json` | 对标 Element Plus 的目标清单（97 项，标注已完成 / 待做） |
+| `tools/gen-index.py` | 按组件目录自动重建库主入口 |
 | `tools/sync-to-site.sh` | 同步到站点并自动校验 |
 
 **取值规则**（重要）：优先取宿主主题变量（Obsidian 的 `--interactive-accent` / `--background-primary` / `--radius-s` …），取不到时才用品牌回落值。所以用户换主题，界面自动跟着变。
@@ -30,14 +32,23 @@
 | `packages/styles/base.scss` | 基础样式（reset + 排版） |
 | `packages/components/` | Vue 3 组件库（**4 个组件**） |
 
-**已实现的组件**（命名遵循契约）：
+**已实现的组件**（21 个，命名遵循契约）：
 
-| 组件 | 类名 | scope |
-|------|------|-------|
-| Button 按钮 | `materin-ui-btn` | ui（共享件） |
-| Input 输入框 | `materin-ui-field` | ui（共享件） |
-| Tag 标签 | `materin-ui-tag` | ui（共享件） |
-| Card 卡片 | `materin-ui-card` | ui（共享件） |
+| 组 | 组件 | 类名 |
+|----|------|------|
+| 布局 | Container / Header / Aside / Main / Footer | `materin-ui-container` / `materin-ui-header` / `materin-ui-aside` / `materin-ui-main` / `materin-ui-footer` |
+| 布局 | Row / Col（24 栅格，xs~xl 断点） | `materin-ui-row` / `materin-ui-col` |
+| 布局 | Space / Divider | `materin-ui-space` / `materin-ui-divider` |
+| 基础 | Link / Text / Title | `materin-ui-link` / `materin-ui-text` / `materin-ui-title` |
+| 基础 | Badge / Avatar | `materin-ui-badge` / `materin-ui-avatar` |
+| 展示 | Skeleton / SkeletonItem / Empty | `materin-ui-skeleton` / `materin-ui-skeleton-item` / `materin-ui-empty` |
+| 展示 | Card | `materin-ui-card` |
+| 表单 | Input 输入框 | `materin-ui-field` |
+| 展示 | Tag 标签 | `materin-ui-tag` |
+| 基础 | Button 按钮 | `materin-ui-btn` |
+
+**路线图**：`registry/roadmap.json` —— 97 项目标（Element Plus 92 项全覆盖 + 本系列额外 5 件），
+已完成与待做都在里面，改组件时先看它。新增组件后跑 `python3 tools/gen-index.py` 重建库入口。
 
 ---
 

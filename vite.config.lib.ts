@@ -4,9 +4,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import pkg from './package.json'
 
 export default defineConfig({
   plugins: [vue()],
+  // 版本号从 package.json 注入（库入口 index.ts 用 __MI_VERSION__），避免两处版本漂移
+  define: { __MI_VERSION__: JSON.stringify(pkg.version) },
   resolve: {
     // 与 vite.config.ts 保持一致：组件样式里写 @use '@/styles/tokens.scss'
     alias: {

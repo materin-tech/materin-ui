@@ -1,0 +1,631 @@
+{
+  "target": "对标 Element Plus 全覆盖，并在工具栏/视觉基元上多出若干件",
+  "groups": [
+    {
+      "group": "基础 Basic",
+      "items": [
+        {
+          "materin": "MiButton",
+          "element_plus": "Button",
+          "status": "done",
+          "note": "按钮"
+        },
+        {
+          "materin": "MiButtonGroup",
+          "element_plus": "ButtonGroup",
+          "status": "planned",
+          "note": "按钮组"
+        },
+        {
+          "materin": "MiIcon",
+          "element_plus": "Icon",
+          "status": "planned",
+          "note": "图标"
+        },
+        {
+          "materin": "MiLink",
+          "element_plus": "Link",
+          "status": "done",
+          "note": "链接"
+        },
+        {
+          "materin": "MiText",
+          "element_plus": "Text",
+          "status": "done",
+          "note": "文本"
+        },
+        {
+          "materin": "MiTitle",
+          "element_plus": "Typography/标题",
+          "status": "done",
+          "note": "标题 1–6 级"
+        },
+        {
+          "materin": "MiDivider",
+          "element_plus": "Divider",
+          "status": "done",
+          "note": "分割线"
+        }
+      ]
+    },
+    {
+      "group": "布局 Layout",
+      "items": [
+        {
+          "materin": "MiContainer",
+          "element_plus": "Container",
+          "status": "done",
+          "note": "容器"
+        },
+        {
+          "materin": "MiHeader",
+          "element_plus": "Header",
+          "status": "done",
+          "note": "顶栏"
+        },
+        {
+          "materin": "MiAside",
+          "element_plus": "Aside",
+          "status": "done",
+          "note": "侧栏"
+        },
+        {
+          "materin": "MiMain",
+          "element_plus": "Main",
+          "status": "done",
+          "note": "主区"
+        },
+        {
+          "materin": "MiFooter",
+          "element_plus": "Footer",
+          "status": "done",
+          "note": "页脚"
+        },
+        {
+          "materin": "MiRow",
+          "element_plus": "Row",
+          "status": "done",
+          "note": "栅格行"
+        },
+        {
+          "materin": "MiCol",
+          "element_plus": "Col",
+          "status": "done",
+          "note": "栅格列"
+        },
+        {
+          "materin": "MiSpace",
+          "element_plus": "Space",
+          "status": "done",
+          "note": "间距"
+        },
+        {
+          "materin": "MiSplitter",
+          "element_plus": "Splitter",
+          "status": "planned",
+          "note": "可拖拽分栏"
+        }
+      ]
+    },
+    {
+      "group": "表单 Form",
+      "items": [
+        {
+          "materin": "MiForm",
+          "element_plus": "Form",
+          "status": "planned",
+          "note": "表单"
+        },
+        {
+          "materin": "MiFormItem",
+          "element_plus": "FormItem",
+          "status": "planned",
+          "note": "表单项"
+        },
+        {
+          "materin": "MiInput",
+          "element_plus": "Input",
+          "status": "done",
+          "note": "输入框"
+        },
+        {
+          "materin": "MiInputNumber",
+          "element_plus": "InputNumber",
+          "status": "planned",
+          "note": "数字输入"
+        },
+        {
+          "materin": "MiSelect",
+          "element_plus": "Select",
+          "status": "planned",
+          "note": "下拉选择"
+        },
+        {
+          "materin": "MiOption",
+          "element_plus": "Option",
+          "status": "planned",
+          "note": "下拉项"
+        },
+        {
+          "materin": "MiOptionGroup",
+          "element_plus": "OptionGroup",
+          "status": "planned",
+          "note": "下拉分组"
+        },
+        {
+          "materin": "MiCascader",
+          "element_plus": "Cascader",
+          "status": "planned",
+          "note": "级联选择"
+        },
+        {
+          "materin": "MiCheckbox",
+          "element_plus": "Checkbox",
+          "status": "planned",
+          "note": "多选框"
+        },
+        {
+          "materin": "MiCheckboxGroup",
+          "element_plus": "CheckboxGroup",
+          "status": "planned",
+          "note": "多选组"
+        },
+        {
+          "materin": "MiRadio",
+          "element_plus": "Radio",
+          "status": "planned",
+          "note": "单选框"
+        },
+        {
+          "materin": "MiRadioGroup",
+          "element_plus": "RadioGroup",
+          "status": "planned",
+          "note": "单选组"
+        },
+        {
+          "materin": "MiSwitch",
+          "element_plus": "Switch",
+          "status": "planned",
+          "note": "开关"
+        },
+        {
+          "materin": "MiSlider",
+          "element_plus": "Slider",
+          "status": "planned",
+          "note": "滑块"
+        },
+        {
+          "materin": "MiRate",
+          "element_plus": "Rate",
+          "status": "planned",
+          "note": "评分"
+        },
+        {
+          "materin": "MiColorPicker",
+          "element_plus": "ColorPicker",
+          "status": "planned",
+          "note": "取色器"
+        },
+        {
+          "materin": "MiUpload",
+          "element_plus": "Upload",
+          "status": "planned",
+          "note": "上传"
+        },
+        {
+          "materin": "MiTransfer",
+          "element_plus": "Transfer",
+          "status": "planned",
+          "note": "穿梭框"
+        },
+        {
+          "materin": "MiDatePicker",
+          "element_plus": "DatePicker",
+          "status": "planned",
+          "note": "日期选择"
+        },
+        {
+          "materin": "MiTimePicker",
+          "element_plus": "TimePicker",
+          "status": "planned",
+          "note": "时间选择"
+        },
+        {
+          "materin": "MiTimeSelect",
+          "element_plus": "TimeSelect",
+          "status": "planned",
+          "note": "时间下拉"
+        },
+        {
+          "materin": "MiAutocomplete",
+          "element_plus": "Autocomplete",
+          "status": "planned",
+          "note": "自动补全"
+        },
+        {
+          "materin": "MiMention",
+          "element_plus": "Mention",
+          "status": "planned",
+          "note": "提及"
+        }
+      ]
+    },
+    {
+      "group": "数据展示 Data",
+      "items": [
+        {
+          "materin": "MiTable",
+          "element_plus": "Table",
+          "status": "planned",
+          "note": "表格"
+        },
+        {
+          "materin": "MiTableColumn",
+          "element_plus": "TableColumn",
+          "status": "planned",
+          "note": "表格列"
+        },
+        {
+          "materin": "MiTableV2",
+          "element_plus": "TableV2",
+          "status": "planned",
+          "note": "虚拟表格"
+        },
+        {
+          "materin": "MiTag",
+          "element_plus": "Tag",
+          "status": "done",
+          "note": "标签"
+        },
+        {
+          "materin": "MiProgress",
+          "element_plus": "Progress",
+          "status": "planned",
+          "note": "进度条"
+        },
+        {
+          "materin": "MiTree",
+          "element_plus": "Tree",
+          "status": "planned",
+          "note": "树"
+        },
+        {
+          "materin": "MiTreeSelect",
+          "element_plus": "TreeSelect",
+          "status": "planned",
+          "note": "树选择"
+        },
+        {
+          "materin": "MiPagination",
+          "element_plus": "Pagination",
+          "status": "planned",
+          "note": "分页"
+        },
+        {
+          "materin": "MiBadge",
+          "element_plus": "Badge",
+          "status": "done",
+          "note": "角标"
+        },
+        {
+          "materin": "MiAvatar",
+          "element_plus": "Avatar",
+          "status": "done",
+          "note": "头像"
+        },
+        {
+          "materin": "MiSkeleton",
+          "element_plus": "Skeleton",
+          "status": "done",
+          "note": "骨架屏"
+        },
+        {
+          "materin": "MiSkeletonItem",
+          "element_plus": "SkeletonItem",
+          "status": "done",
+          "note": "骨架块"
+        },
+        {
+          "materin": "MiEmpty",
+          "element_plus": "Empty",
+          "status": "done",
+          "note": "空状态"
+        },
+        {
+          "materin": "MiDescriptions",
+          "element_plus": "Descriptions",
+          "status": "planned",
+          "note": "描述列表"
+        },
+        {
+          "materin": "MiResult",
+          "element_plus": "Result",
+          "status": "planned",
+          "note": "结果页"
+        },
+        {
+          "materin": "MiCard",
+          "element_plus": "Card",
+          "status": "done",
+          "note": "卡片"
+        },
+        {
+          "materin": "MiStatistic",
+          "element_plus": "Statistic",
+          "status": "planned",
+          "note": "统计数值"
+        },
+        {
+          "materin": "MiCollapse",
+          "element_plus": "Collapse",
+          "status": "planned",
+          "note": "折叠面板"
+        },
+        {
+          "materin": "MiTimeline",
+          "element_plus": "Timeline",
+          "status": "planned",
+          "note": "时间线"
+        },
+        {
+          "materin": "MiCalendar",
+          "element_plus": "Calendar",
+          "status": "planned",
+          "note": "日历"
+        },
+        {
+          "materin": "MiImage",
+          "element_plus": "Image",
+          "status": "planned",
+          "note": "图片"
+        },
+        {
+          "materin": "MiInfiniteScroll",
+          "element_plus": "InfiniteScroll",
+          "status": "planned",
+          "note": "无限滚动"
+        },
+        {
+          "materin": "MiSegmented",
+          "element_plus": "Segmented",
+          "status": "planned",
+          "note": "分段控制"
+        },
+        {
+          "materin": "MiQRCode",
+          "element_plus": "QRCode",
+          "status": "planned",
+          "note": "二维码"
+        },
+        {
+          "materin": "MiWatermark",
+          "element_plus": "Watermark",
+          "status": "planned",
+          "note": "水印"
+        }
+      ]
+    },
+    {
+      "group": "反馈 Feedback",
+      "items": [
+        {
+          "materin": "MiAlert",
+          "element_plus": "Alert",
+          "status": "planned",
+          "note": "提示条"
+        },
+        {
+          "materin": "MiLoading",
+          "element_plus": "Loading",
+          "status": "planned",
+          "note": "加载"
+        },
+        {
+          "materin": "MiMessage",
+          "element_plus": "Message",
+          "status": "planned",
+          "note": "消息"
+        },
+        {
+          "materin": "MiMessageBox",
+          "element_plus": "MessageBox",
+          "status": "planned",
+          "note": "弹窗确认"
+        },
+        {
+          "materin": "MiNotification",
+          "element_plus": "Notification",
+          "status": "planned",
+          "note": "通知"
+        },
+        {
+          "materin": "MiPopover",
+          "element_plus": "Popover",
+          "status": "planned",
+          "note": "气泡卡片"
+        },
+        {
+          "materin": "MiTooltip",
+          "element_plus": "Tooltip",
+          "status": "planned",
+          "note": "文字提示"
+        },
+        {
+          "materin": "MiDialog",
+          "element_plus": "Dialog",
+          "status": "planned",
+          "note": "对话框"
+        },
+        {
+          "materin": "MiDrawer",
+          "element_plus": "Drawer",
+          "status": "planned",
+          "note": "抽屉"
+        },
+        {
+          "materin": "MiPopconfirm",
+          "element_plus": "Popconfirm",
+          "status": "planned",
+          "note": "气泡确认"
+        },
+        {
+          "materin": "MiTour",
+          "element_plus": "Tour",
+          "status": "planned",
+          "note": "漫游引导"
+        }
+      ]
+    },
+    {
+      "group": "导航 Navigation",
+      "items": [
+        {
+          "materin": "MiMenu",
+          "element_plus": "Menu",
+          "status": "planned",
+          "note": "菜单"
+        },
+        {
+          "materin": "MiMenuItem",
+          "element_plus": "MenuItem",
+          "status": "planned",
+          "note": "菜单项"
+        },
+        {
+          "materin": "MiSubMenu",
+          "element_plus": "SubMenu",
+          "status": "planned",
+          "note": "子菜单"
+        },
+        {
+          "materin": "MiTabs",
+          "element_plus": "Tabs",
+          "status": "planned",
+          "note": "标签页"
+        },
+        {
+          "materin": "MiTabPane",
+          "element_plus": "TabPane",
+          "status": "planned",
+          "note": "标签面板"
+        },
+        {
+          "materin": "MiBreadcrumb",
+          "element_plus": "Breadcrumb",
+          "status": "planned",
+          "note": "面包屑"
+        },
+        {
+          "materin": "MiDropdown",
+          "element_plus": "Dropdown",
+          "status": "planned",
+          "note": "下拉菜单"
+        },
+        {
+          "materin": "MiSteps",
+          "element_plus": "Steps",
+          "status": "planned",
+          "note": "步骤条"
+        },
+        {
+          "materin": "MiStep",
+          "element_plus": "Step",
+          "status": "planned",
+          "note": "步骤"
+        },
+        {
+          "materin": "MiPageHeader",
+          "element_plus": "PageHeader",
+          "status": "planned",
+          "note": "页头"
+        },
+        {
+          "materin": "MiAnchor",
+          "element_plus": "Anchor",
+          "status": "planned",
+          "note": "锚点"
+        },
+        {
+          "materin": "MiBacktop",
+          "element_plus": "Backtop",
+          "status": "planned",
+          "note": "回到顶部"
+        },
+        {
+          "materin": "MiAffix",
+          "element_plus": "Affix",
+          "status": "planned",
+          "note": "固钉"
+        }
+      ]
+    },
+    {
+      "group": "其他 Others",
+      "items": [
+        {
+          "materin": "MiCarousel",
+          "element_plus": "Carousel",
+          "status": "planned",
+          "note": "走马灯"
+        },
+        {
+          "materin": "MiScrollbar",
+          "element_plus": "Scrollbar",
+          "status": "planned",
+          "note": "滚动条"
+        },
+        {
+          "materin": "MiConfigProvider",
+          "element_plus": "ConfigProvider",
+          "status": "planned",
+          "note": "全局配置"
+        },
+        {
+          "materin": "MiIconBase",
+          "element_plus": "—",
+          "status": "planned",
+          "note": "图标基元"
+        }
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "materin": "MiCopy",
+      "element_plus": null,
+      "status": "planned",
+      "note": "复制按钮：一键复制并给出成功反馈"
+    },
+    {
+      "materin": "MiMethodTag",
+      "element_plus": null,
+      "status": "planned",
+      "note": "HTTP 方法徽标（GET/POST/…），服务 View 插件"
+    },
+    {
+      "materin": "MiStatusDot",
+      "element_plus": null,
+      "status": "planned",
+      "note": "状态点：在线/离线/加载/异常"
+    },
+    {
+      "materin": "MiGlassPanel",
+      "element_plus": null,
+      "status": "planned",
+      "note": "毛玻璃面板：本系列视觉基元，任意内容可承载"
+    },
+    {
+      "materin": "MiPageShell",
+      "element_plus": null,
+      "status": "planned",
+      "note": "页面骨架：顶栏+侧栏+主区+页脚一体封装"
+    }
+  ],
+  "summary": {
+    "element_plus_scope": 92,
+    "materin_scope": 97,
+    "extras_beyond_element_plus": 5,
+    "done": 21,
+    "planned": 76
+  }
+}

@@ -9,6 +9,7 @@
         <a href="#install">{{ t('安装', 'Install') }}</a>
         <a href="#tokens">{{ t('令牌', 'Tokens') }}</a>
         <a href="#components">{{ t('组件', 'Components') }}</a>
+        <a href="#layout">{{ t('布局与基础', 'Layout') }}</a>
         <a href="#contract">{{ t('命名契约', 'Contract') }}</a>
         <button class="materin-docs-toggle" type="button" @click="toggleLang">{{ lang === 'zh' ? 'EN' : '中' }}</button>
         <button class="materin-docs-toggle" type="button" :aria-label="t('切换主题', 'Toggle theme')" @click="toggleTheme">
@@ -95,6 +96,14 @@
       <div class="materin-docs-section__head">
         <h2>{{ t('组件', 'Components') }}</h2>
         <p>{{ t('下面是真组件在跑，不是截图。每块都标了类名前缀，方便按名在代码里定位。', 'These are the real components running, not screenshots. Each block states its class prefix so you can locate it by name in the source.') }}</p>
+        <p style="margin-top:8px;color:var(--materin-text-muted)">
+          {{
+            t(
+              '当前 21 个组件（布局 9 + 基础 8 + 表单/展示 4），另有 76 个在路线图上：对标 Element Plus 全覆盖，另加 5 个本系列需要的组件。清单见 registry/roadmap.json。',
+              '21 components today (9 layout, 8 foundation, 4 form/data), with 76 more on the roadmap: full Element Plus coverage plus five components this series needs. The list lives in registry/roadmap.json.'
+            )
+          }}
+        </p>
       </div>
 
       <div class="materin-docs-demo materin-docs-demo--column">
@@ -173,6 +182,8 @@
     </div>
   </section>
 
+  <ComponentsLayer :lang="lang" />
+
   <section id="contract" class="materin-docs-section">
     <div class="materin-docs-wrap">
       <div class="materin-docs-section__head">
@@ -210,6 +221,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { MiButton, MiCard, MiInput, MiTag } from '@/materin-ui/index'
+import ComponentsLayer from './sections/ComponentsLayer.vue'
 
 declare const __MI_VERSION__: string
 const version = __MI_VERSION__
