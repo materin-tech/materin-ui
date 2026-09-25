@@ -1,3 +1,5 @@
+@use '@/styles/tokens.scss' as *;
+
 // =============================================================================
 // materin-ui 基础样式（Base）
 // =============================================================================
@@ -25,28 +27,28 @@ html {
 }
 
 body {
-  font-family: var(--mi-font-family-base);
-  font-size: var(--mi-font-size-body-m, 14px);
+  font-family: $materin-font-ui;
+  font-size: $materin-font-size-body;
   line-height: 1.65;
-  color: var(--mi-text-regular);
-  background-color: var(--mi-bg-page);
+  color: $materin-text;
+  background-color: $materin-surface;
   min-height: 100vh;
-  transition: background-color var(--mi-duration-normal) var(--mi-ease-standard),
-              color var(--mi-duration-normal) var(--mi-ease-standard);
+  transition: background-color $materin-duration-normal $materin-ease-standard,
+              color $materin-duration-normal $materin-ease-standard;
 }
 
 // 链接
 a {
-  color: var(--mi-text-link);
+  color: $materin-accent;
   text-decoration: none;
-  transition: color var(--mi-duration-fast) var(--mi-ease-standard);
+  transition: color $materin-duration-fast $materin-ease-standard;
 
   &:hover {
-    color: var(--mi-color-primary);
+    color: $materin-accent;
   }
 
   &:focus-visible {
-    outline: 2px solid var(--mi-color-primary);
+    outline: 2px solid $materin-accent;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -54,33 +56,33 @@ a {
 
 // 标题
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--mi-font-family-display);
-  color: var(--mi-text-primary);
-  font-weight: var(--mi-font-weight-semibold);
+  font-family: $materin-font-ui;
+  color: $materin-text;
+  font-weight: $materin-font-weight-bold;
   letter-spacing: -0.01em;
   line-height: 1.25;
 }
 
-h1 { font-size: var(--mi-font-size-h1); font-weight: 700; line-height: 1.15; }
-h2 { font-size: var(--mi-font-size-h2); }
-h3 { font-size: var(--mi-font-size-h3); }
-h4 { font-size: var(--mi-font-size-h4); }
+h1 { font-size: $materin-font-size-h1; font-weight: 700; line-height: 1.15; }
+h2 { font-size: $materin-font-size-h2; }
+h3 { font-size: $materin-font-size-h3; }
+h4 { font-size: $materin-font-size-h3; }
 
 // 段落
 p {
   line-height: 1.65;
-  color: var(--mi-text-regular);
+  color: $materin-text;
 }
 
 // 代码（AI 输出的科技感）
 code, pre, kbd, samp {
-  font-family: var(--mi-font-family-mono);
+  font-family: $materin-font-mono;
 }
 
 code {
   padding: 2px 6px;
-  background: rgba(99, 102, 241, 0.08);
-  color: var(--mi-color-primary);
+  background: $materin-accent-soft;
+  color: $materin-accent;
   border-radius: 4px;
   font-size: 0.9em;
   font-weight: 500;
@@ -88,9 +90,9 @@ code {
 
 pre {
   padding: 16px;
-  background: var(--mi-bg-surface);
-  border: 1px solid var(--mi-border-light);
-  border-radius: var(--mi-radius-sm);
+  background: $materin-surface-2;
+  border: 1px solid $materin-border;
+  border-radius: $materin-radius;
   overflow-x: auto;
   line-height: 1.5;
 
@@ -138,12 +140,12 @@ img, svg {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding-left: var(--mi-spacing-5);
-  padding-right: var(--mi-spacing-5);
+  padding-left: $materin-space-4;
+  padding-right: $materin-space-4;
 
   @media (min-width: 768px) {
-    padding-left: var(--mi-spacing-6);
-    padding-right: var(--mi-spacing-6);
+    padding-left: $materin-space-5;
+    padding-right: $materin-space-5;
   }
 }
 
@@ -151,13 +153,13 @@ img, svg {
 // 文本工具类（Text Utilities）
 // -----------------------------------------------------------------------------
 
-.mi-text-primary  { color: var(--mi-text-primary); }
-.mi-text-regular  { color: var(--mi-text-regular); }
-.mi-text-secondary { color: var(--mi-text-secondary); }
-.mi-text-disabled { color: var(--mi-text-disabled); }
-.mi-text-link     { color: var(--mi-text-link); }
+.mi-text-primary  { color: $materin-text; }
+.mi-text-regular  { color: $materin-text; }
+.mi-text-secondary { color: $materin-text-muted; }
+.mi-text-disabled { color: $materin-text-faint; }
+.mi-text-link     { color: $materin-accent; }
 
-.mi-text-mono     { font-family: var(--mi-font-family-mono); }
+.mi-text-mono     { font-family: $materin-font-mono; }
 
 // -----------------------------------------------------------------------------
 // 渐变文本（AI 渐变标题）
@@ -165,8 +167,8 @@ img, svg {
 
 .mi-text-gradient {
   background: linear-gradient(135deg,
-              var(--mi-color-primary) 0%,
-              var(--mi-color-accent) 100%);
+              $materin-accent 0%,
+              $materin-accent 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -178,7 +180,7 @@ img, svg {
 // -----------------------------------------------------------------------------
 
 :focus-visible {
-  outline: 2px solid var(--mi-color-primary);
+  outline: 2px solid $materin-accent;
   outline-offset: 2px;
 }
 
@@ -187,6 +189,6 @@ img, svg {
 // -----------------------------------------------------------------------------
 
 ::selection {
-  background-color: rgba(99, 102, 241, 0.24);
-  color: var(--mi-text-primary);
+  background-color: $materin-accent-soft;
+  color: $materin-text;
 }

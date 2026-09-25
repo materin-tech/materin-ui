@@ -19,6 +19,17 @@
 // 主强调色（绑定宿主 → 品牌）
 $materin-accent:        var(--materin-accent, #5b8cff);
 $materin-accent-soft:   var(--materin-accent-soft, rgba(91, 140, 255, 0.22));
+$materin-accent-border: var(--materin-accent-border, rgba(91, 140, 255, 0.32));
+
+// 语义色的底色与描边 —— 由语义色派生，组件里不要再写 rgba()（改语义色，标签一起变）
+$materin-secondary-soft:   var(--materin-secondary-soft, rgba(110, 231, 213, 0.16));
+$materin-secondary-border: var(--materin-secondary-border, rgba(110, 231, 213, 0.32));
+$materin-ok-soft:          var(--materin-ok-soft, rgba(58, 125, 68, 0.18));
+$materin-ok-border:        var(--materin-ok-border, rgba(58, 125, 68, 0.32));
+$materin-warn-soft:        var(--materin-warn-soft, rgba(184, 134, 11, 0.18));
+$materin-warn-border:      var(--materin-warn-border, rgba(184, 134, 11, 0.32));
+$materin-error-soft:       var(--materin-error-soft, rgba(249, 62, 62, 0.16));
+$materin-error-border:     var(--materin-error-border, rgba(249, 62, 62, 0.32));
 $materin-accent-strong: var(--materin-accent-strong, #4a7cef);
 $materin-on-accent:     var(--materin-on-accent, #ffffff);
 
@@ -36,7 +47,7 @@ $materin-surface-3:  var(--materin-surface-3, #131b2e);       // 卡片
 $materin-surface-4:  var(--materin-surface-4, #18223a);       // 浮层
 
 $materin-border:     var(--materin-border, #23304d);
-$materin-border-strong: var(--materin-border, #23304d);
+$materin-border-strong: var(--materin-border-strong, #23304d);
 $materin-shadow:     var(--materin-shadow, 0 10px 30px rgba(0, 0, 0, 0.35));
 
 // -----------------------------------------------------------------------------
@@ -45,7 +56,7 @@ $materin-shadow:     var(--materin-shadow, 0 10px 30px rgba(0, 0, 0, 0.35));
 
 $materin-text:        var(--materin-text, #e7ecf5);            // 实色！不加透明度
 $materin-text-muted:  var(--materin-text-muted, #93a1bd);
-$materin-text-faint:  var(--materin-text-muted, #93a1bd);
+$materin-text-faint:  var(--materin-text-faint, #93a1bd);
 
 // -----------------------------------------------------------------------------
 // 4. 语义状态色（Status）
@@ -54,7 +65,7 @@ $materin-text-faint:  var(--materin-text-muted, #93a1bd);
 $materin-ok:    var(--materin-ok, #3a7d44);      // 成功
 $materin-warn:  var(--materin-warn, #b8860b);    // 警告
 $materin-error: var(--materin-error, #f93e3e);   // 错误
-$materin-info:  var(--materin-accent, #5b8cff);  // 信息
+$materin-info: var(--materin-info, #5b8cff);  // 信息
 
 // -----------------------------------------------------------------------------
 // 5. 形状与间距（Shape & Spacing）

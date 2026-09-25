@@ -93,35 +93,35 @@ const handleClose = (e: MouseEvent) => {
     padding: $materin-space-1 $materin-space-3;
   }
 
-  // 主题色 - 用语义令牌，不用硬编码颜色
+  // 主题色 —— 全部走语义令牌，组件里不出现 rgba()（2026-09 修正：原先这里硬写了 10 处）
   &--primary {
     background: $materin-accent-soft;
     color: $materin-accent;
-    border-color: rgba(91, 140, 255, 0.32);
+    border-color: $materin-accent-border;
   }
 
   &--secondary {
-    background: rgba(110, 231, 213, 0.16);
+    background: $materin-secondary-soft;
     color: $materin-secondary;
-    border-color: rgba(110, 231, 213, 0.32);
+    border-color: $materin-secondary-border;
   }
 
   &--ok {
-    background: rgba(58, 125, 68, 0.18);
+    background: $materin-ok-soft;
     color: $materin-ok;
-    border-color: rgba(58, 125, 68, 0.32);
+    border-color: $materin-ok-border;
   }
 
   &--warn {
-    background: rgba(184, 134, 11, 0.18);
+    background: $materin-warn-soft;
     color: $materin-warn;
-    border-color: rgba(184, 134, 11, 0.32);
+    border-color: $materin-warn-border;
   }
 
   &--error {
-    background: rgba(249, 62, 62, 0.16);
+    background: $materin-error-soft;
     color: $materin-error;
-    border-color: rgba(249, 62, 62, 0.32);
+    border-color: $materin-error-border;
   }
 
   &--neutral {
@@ -161,7 +161,7 @@ const handleClose = (e: MouseEvent) => {
 
     &:hover {
       opacity: 1;
-      background: rgba(255, 255, 255, 0.16);
+      background: $materin-glass-highlight;
     }
   }
 }

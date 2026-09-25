@@ -7,6 +7,14 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [vue()],
+  resolve: {
+    // 与 vite.config.ts 保持一致：组件样式里写 @use '@/styles/tokens.scss'
+    alias: {
+      '@': resolve(__dirname, 'packages'),
+      '@materin-ui': resolve(__dirname, 'packages/materin-ui'),
+      '~': resolve(__dirname, '.')
+    }
+  },
   build: {
     outDir: 'dist',
     lib: {
@@ -19,6 +27,8 @@ export default defineConfig({
       // 确保外部化处理所有 Vue 依赖
       external: ['vue', '@vueuse/core'],
       output: {
+        // index.ts 同时有命名导出与默认导出（Vue 插件），显式声明，避免 CJS 消费方踩坑
+        exports: 'named',
         globals: {
           vue: 'Vue',
           '@vueuse/core': 'VueUse'

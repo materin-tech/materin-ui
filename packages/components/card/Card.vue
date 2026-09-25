@@ -38,15 +38,33 @@ interface CardProps {
   width?: string | number
 }
 
-withDefaults(defineProps<CardProps>(), {
+const props = withDefaults(defineProps<CardProps>(), {
   variant: 'default',
   shadow: 'elev-1',
   hoverable: false,
   bordered: true
 })
 
-const cardClasses = computed(() => ['materin-ui-card'])
-// 简化版类计算
+const cardClasses = computed(() => {
+  const classes: string[] = ['materin-ui-card']
+  // default 是基类外观，不额外挂变体类
+  if (props.variant !== 'default') classes.push(`materin-ui-card--${props.variant}`)
+  if (props.hoverable) classes.push('materin-ui-card--hoverable')
+  return classes
+})
+
+// 阴影 / 描边 / 宽度走行内样式，值一律引用令牌
+const customStyle = computed(() => {
+  const style: Record<string, string> = {}
+  if (props.shadow === 'none') style.boxShadow = 'none'
+  else if (props.shadow === 'elev-2') style.boxShadow = 'var(--materin-elev-2)'
+  else style.boxShadow = 'var(--materin-elev-1)'
+  if (!props.bordered) style.border = 'none'
+  if (props.width !== undefined) {
+    style.width = typeof props.width === 'number' ? `${props.width}px` : props.width
+  }
+  return style
+})
 </script>
 
 <style lang="scss">

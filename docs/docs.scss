@@ -1,0 +1,120 @@
+/* ==========================================================================
+   文档站外观（scope = docs）
+   --------------------------------------------------------------------------
+   命名契约同样适用：materin-docs-<component>[__part]
+   取值只引用令牌，不写死色值。
+   ========================================================================== */
+@use '@/styles/tokens.scss' as *;
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: $materin-surface;
+  color: $materin-text;
+  font-family: $materin-font-ui;
+  font-size: $materin-font-size-body;
+  line-height: $materin-line-height-normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: $materin-accent; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre, kbd { font-family: $materin-font-mono; }
+
+.materin-docs-wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 $materin-space-5; }
+
+/* --- 顶栏 --------------------------------------------------------------- */
+.materin-docs-header {
+  position: sticky; top: 0; z-index: 20;
+  background: $materin-glass-bg;
+  backdrop-filter: $materin-glass-blur;
+  -webkit-backdrop-filter: $materin-glass-blur;
+  border-bottom: 1px solid $materin-glass-border;
+}
+.materin-docs-header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: $materin-space-4; height: 62px;
+}
+.materin-docs-brand { display: inline-flex; align-items: center; gap: $materin-space-2; color: $materin-text; }
+.materin-docs-brand:hover { text-decoration: none; }
+.materin-docs-brand__name { font-weight: $materin-font-weight-bold; }
+.materin-docs-brand__version {
+  font-size: $materin-font-size-caption; color: $materin-secondary;
+  border: 1px solid $materin-secondary-border; background: $materin-secondary-soft;
+  border-radius: 999px; padding: 1px $materin-space-2;
+}
+.materin-docs-nav { display: flex; align-items: center; gap: $materin-space-4; font-size: $materin-font-size-small; }
+.materin-docs-nav a { color: $materin-text-muted; }
+.materin-docs-nav a:hover { color: $materin-text; text-decoration: none; }
+.materin-docs-toggle {
+  background: $materin-glass-bg-subtle; border: 1px solid $materin-glass-border;
+  color: $materin-text; border-radius: $materin-radius; padding: 4px $materin-space-2;
+  font-size: $materin-font-size-small; font-weight: $materin-font-weight-bold;
+  cursor: pointer; min-width: 40px; transition: border-color $materin-duration-fast $materin-ease-standard;
+}
+.materin-docs-toggle:hover { border-color: $materin-accent; color: $materin-accent; }
+
+/* --- 首屏 --------------------------------------------------------------- */
+.materin-docs-hero {
+  padding: $materin-space-7 0 $materin-space-6;
+  border-bottom: 1px solid $materin-border;
+  background:
+    radial-gradient(900px 320px at 12% -10%, $materin-accent-soft, transparent),
+    radial-gradient(700px 300px at 92% 8%, $materin-secondary-soft, transparent);
+}
+.materin-docs-hero h1 { margin: 0 0 $materin-space-3; font-size: $materin-font-size-display; line-height: $materin-line-height-tight; letter-spacing: -0.02em; }
+.materin-docs-hero p { margin: 0 0 $materin-space-4; max-width: 62ch; color: $materin-text-muted; font-size: 16px; }
+.materin-docs-hero__actions { display: flex; gap: $materin-space-3; flex-wrap: wrap; }
+
+/* --- 分区 --------------------------------------------------------------- */
+.materin-docs-section { padding: $materin-space-7 0; border-bottom: 1px solid $materin-border; }
+.materin-docs-section__head { margin-bottom: $materin-space-5; }
+.materin-docs-section__head h2 { margin: 0 0 $materin-space-2; font-size: $materin-font-size-h2; }
+.materin-docs-section__head p { margin: 0; color: $materin-text-muted; }
+
+/* --- 代码块 ------------------------------------------------------------- */
+.materin-docs-code {
+  margin: 0 0 $materin-space-4; padding: $materin-space-3 $materin-space-4;
+  background: $materin-glass-bg-strong; border: 1px solid $materin-glass-border;
+  border-radius: $materin-radius-lg; overflow-x: auto;
+  font-size: $materin-font-size-small; line-height: $materin-line-height-normal;
+}
+
+/* --- 演示台 ------------------------------------------------------------- */
+.materin-docs-demo {
+  display: flex; flex-wrap: wrap; gap: $materin-space-3; align-items: center;
+  padding: $materin-space-4; margin: 0 0 $materin-space-4;
+  background: $materin-glass-bg-subtle; border: 1px solid $materin-glass-border;
+  border-radius: $materin-radius-lg; backdrop-filter: $materin-glass-blur-sm;
+}
+.materin-docs-demo--column { align-items: stretch; }
+.materin-docs-demo__label {
+  width: 100%; margin: 0 0 $materin-space-2;
+  font-size: $materin-font-size-caption; letter-spacing: 0.08em; text-transform: uppercase;
+  color: $materin-text-muted;
+}
+.materin-docs-demo__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: $materin-space-3; width: 100%; }
+
+/* --- 令牌表 ------------------------------------------------------------- */
+.materin-docs-tokens { width: 100%; border-collapse: collapse; font-size: $materin-font-size-small; }
+.materin-docs-tokens th, .materin-docs-tokens td {
+  border-bottom: 1px solid $materin-border; padding: $materin-space-2 $materin-space-3; text-align: left; vertical-align: middle;
+}
+.materin-docs-tokens th { color: $materin-text-muted; font-size: $materin-font-size-caption; letter-spacing: 0.06em; text-transform: uppercase; }
+.materin-docs-tokens code { font-size: $materin-font-size-caption; }
+.materin-docs-swatch {
+  display: inline-block; width: 16px; height: 16px; border-radius: 4px;
+  border: 1px solid $materin-glass-border; vertical-align: -3px; margin-right: $materin-space-2;
+}
+
+/* --- 页脚 --------------------------------------------------------------- */
+.materin-docs-footer { padding: $materin-space-5 0; color: $materin-text-muted; font-size: $materin-font-size-small; }
+.materin-docs-footer__inner { display: flex; justify-content: space-between; gap: $materin-space-3; flex-wrap: wrap; }
+
+@media (max-width: 720px) {
+  .materin-docs-hero h1 { font-size: $materin-font-size-h1; }
+  .materin-docs-nav { gap: $materin-space-3; }
+}

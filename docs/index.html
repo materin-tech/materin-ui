@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materin UI · Vue 3 组件库与风格规范 / Vue 3 components and style spec</title>
+  <meta name="description" content="Materin UI：一套令牌与命名契约，供 Vue 3 组件库、组织站点与 Obsidian 插件共用。这里是组件与风格规范的展示站点。" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <script>
+    // 首屏前定主题，避免闪一下：localStorage → 系统偏好
+    (function () {
+      try {
+        var t = localStorage.getItem('mi-theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>本站需要 JavaScript 才能渲染组件演示。 / This page needs JavaScript to render the component demos.</noscript>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

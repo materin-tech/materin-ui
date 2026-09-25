@@ -31,3 +31,23 @@
 - 所有组件**只引用 `--materin-*` 令牌**，零硬编码颜色
 - 玻璃风视觉采用 mixin：`@include materin-glass('strong' | 'normal' | 'subtle')`
 - 主题切换零适配：换主题只改令牌值，组件零代码改动
+
+## 0.2.1 — 2026-09
+组件库可构建、可发布，并补上文档与风格展示站点。
+
+- 新增文档站 `docs/`（Vue 单页）：真组件演示、令牌实时取值表、命名契约、安装方式；
+  源码在 `docs/`，由 `.github/workflows/docs.yml` 构建后发布到
+  https://materin-tech.github.io/materin-ui/ （契约检查作为发布门禁）
+- 修复「包发出去就是坏的」若干问题：
+  - 库构建缺 `@` 别名 → 组件 SCSS 全部编译失败（`@use '@/styles/tokens.scss'`）
+  - `exports["./styles"]` 指向 `dist/index.css`，实际产物是 `dist/style.css`
+  - 类型声明没有构建步骤；`types` 应为 `dist/materin-ui/index.d.ts`（`vue-tsc` 升到 2.x）
+  - CJS 消费方需 `.default` 才能拿到插件，改为显式 `exports: 'named'`
+- 修复组件实现缺陷：`Card.vue` 引用不存在的 `customStyle`（类型检查报错、props 全部未生效，
+  variant / shadow / hoverable / bordered / width 现在真起作用，取值一律引用令牌）
+- 修复 `packages/styles/base.scss`：37 行引用 26 个从未定义的 `--mi-*` 变量 + 硬编码靛蓝
+- 修复 `packages/components/tag/Tag.vue`：10 处硬编码 rgba → 语义令牌
+- 修复 `packages/styles/tokens.scss` 三处镜像错名（border-strong / text-faint / info）
+- 令牌补齐：只在 SCSS 里存在的 25 个（动效 / 字阶 / 间距 6、7 / 语义别名）已进 CSS 正本
+- 命名契约新增 `docs` scope（六档：ui / site / docs / office / view / ctx）；文档站 12 个组件入清单
+- 校验脚本：扫 `.vue`/`.scss`（含 SCSS 嵌套 `&--variant`）、排除构建产物、修 3 处自身 bug
