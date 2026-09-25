@@ -22,10 +22,18 @@
       <DemoHost :kebab="component.kebab" :lang="lang" />
     </section>
 
+    <!-- 用法 -->
+    <section class="materin-docs-section">
+      <div class="materin-docs-section__head">
+        <h2>{{ t('用法', 'Usage') }}</h2>
+      </div>
+      <pre class="materin-docs-code">{{ usageCode }}</pre>
+    </section>
+
     <!-- Props API -->
     <section class="materin-docs-section">
       <div class="materin-docs-section__head">
-        <h2>Props</h2>
+        <h2>{{ t('属性', 'Props') }}</h2>
       </div>
       <table v-if="component.props.length" class="materin-docs-api">
         <thead>
@@ -44,7 +52,7 @@
         </tbody>
       </table>
       <p v-else class="materin-docs-component__none">
-        {{ t('该组件以函数或子件形式使用，见「导入」一栏。', 'Used as a function or sub-component — see Imports above.') }}
+        {{ t('该组件不接属性。', 'This component takes no props.') }}
       </p>
     </section>
 
@@ -106,6 +114,21 @@ const t = (zh: string, en: string) => (props.lang === 'zh' ? zh : en)
 
 const flat = computed(() => groups.flatMap((g) => g.components))
 const index = computed(() => flat.value.findIndex((c) => c.kebab === props.component.kebab))
+/** 用法示例：按组件生成最小可运行片段 */
+const usageCode = computed(() => {
+  const first = props.component.exports[0] ?? props.component.klass
+  return [
+    `<script setup>`,
+    `import { ${first} } from '@materin-tech/materin-ui'`,
+    `import '@materin-tech/materin-ui/styles'`,
+    `<\/script>`,
+    '',
+    `<template>`,
+    `  <${first} />`,
+    `</template>`
+  ].join('\n')
+})
+
 const prev = computed(() => (index.value > 0 ? flat.value[index.value - 1] : null))
 const next = computed(() => (index.value < flat.value.length - 1 ? flat.value[index.value + 1] : null))
 </script>

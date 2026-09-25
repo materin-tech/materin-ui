@@ -220,6 +220,15 @@ code, pre, kbd { font-family: $materin-font-mono; }
 .materin-docs-main {
   flex: 1 1 auto;
   min-width: 0;
+
+  // 正文限宽：文档可读宽度 760px，避免超宽屏右侧大片空白
+  > * {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $materin-space-5;
+    padding-right: $materin-space-5;
+  }
 }
 
 .materin-docs-header__burger {
@@ -294,7 +303,19 @@ code, pre, kbd { font-family: $materin-font-mono; }
 .materin-docs-api {
   width: 100%;
   border-collapse: collapse;
+  table-layout: auto;
   font-size: var(--materin-font-size-small);
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 64px;
+  }
+
+  td code {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
 
   th,
   td {
@@ -335,9 +356,10 @@ code, pre, kbd { font-family: $materin-font-mono; }
   }
 
   dt {
-    flex: 0 0 64px;
+    flex: 0 0 48px;
     color: var(--materin-text-faint);
     font-size: var(--materin-font-size-small);
+    line-height: 1.9;
   }
 
   dd {
@@ -452,4 +474,28 @@ code, pre, kbd { font-family: $materin-font-mono; }
     background: var(--materin-surface-4);
     color: var(--materin-text);
   }
+}
+
+// 组件页区块节奏：统一 40px 间隔，去掉大空档
+.materin-docs-main article > .materin-docs-section {
+  margin-top: 40px;
+}
+
+.materin-docs-main article > .materin-docs-pager {
+  margin-top: 48px;
+}
+
+// 用法代码块
+.materin-docs-main pre.materin-docs-code {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: $materin-space-4;
+  border: 1px solid var(--materin-border);
+  border-radius: var(--materin-radius);
+  background: var(--materin-surface-3);
+  color: var(--materin-text);
+  font-family: var(--materin-font-mono, monospace);
+  font-size: var(--materin-font-size-caption);
+  line-height: 1.7;
+  overflow-x: auto;
 }
