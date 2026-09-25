@@ -100,3 +100,22 @@
   - Image（加载扫光、失败回落、四种裁剪、懒加载）
 - 文档站新增「数据展示」实况区（真分页、真手风琴、真进度推进）
 - 路线图：**已完成 53 / 待做 44**（对标 Element Plus 92 项 + 本系列额外 5 件）
+## 0.7.0 — 2026-09
+**最终批**：组件数 55 → **86**，路线图对标 Element Plus 主线全清。
+
+- 数据层（二）：Tree（递归展开/勾选）、Table（列配置驱动、斑马纹、边框、空态）、
+  Calendar（月视图、禁用过去）、QRCode（canvas 渲染、四档纠错、自动选版本）、
+  Watermark（canvas 纹理平铺，MutationObserver 防删改）、InfiniteScroll（IntersectionObserver 触底）
+- 导航层：Menu（垂直/水平 + Item/Group/Sub）、Tabs、Breadcrumb、Steps（三态）、
+  Dropdown、Anchor（滚动监听高亮）、Backtop、Affix
+- 表单收尾：DatePicker、TimePicker、Upload、Transfer、Cascader、ColorPicker、Autocomplete
+- 其他：Carousel、Scrollbar、ConfigProvider、Icon
+- 系列额外 5 件：Copy、MethodTag、StatusDot、GlassPanel、PageShell
+- 路线图：**92 项对标全部完成**，另加本系列额外 5 件
+## 0.8.0 — 2026-09
+**路线图收尾**：组件数 86 → **93**（主线组件 93 个，含子件），`registry/roadmap.json` 全部 97 项完成。
+
+- 补最后 7 个真缺口：MessageBox（命令式 confirm/alert/prompt）、TreeSelect、TimeSelect、
+  Mention（@ 候选回填）、Splitter（拖拽分栏，键盘可用）、ButtonGroup、PageHeader
+- 系列额外 5 件（Copy / MethodTag / StatusDot / GlassPanel / PageShell）全部落地
+- **对标 Element Plus 主线 92 项全部完成**，另加本系列额外 5 件

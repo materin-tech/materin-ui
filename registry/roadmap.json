@@ -13,13 +13,13 @@
         {
           "materin": "MiButtonGroup",
           "element_plus": "ButtonGroup",
-          "status": "planned",
+          "status": "done",
           "note": "按钮组"
         },
         {
           "materin": "MiIcon",
           "element_plus": "Icon",
-          "status": "planned",
+          "status": "done",
           "note": "图标"
         },
         {
@@ -102,7 +102,7 @@
         {
           "materin": "MiSplitter",
           "element_plus": "Splitter",
-          "status": "planned",
+          "status": "done",
           "note": "可拖拽分栏"
         }
       ]
@@ -155,7 +155,7 @@
         {
           "materin": "MiCascader",
           "element_plus": "Cascader",
-          "status": "planned",
+          "status": "done",
           "note": "级联选择"
         },
         {
@@ -203,49 +203,49 @@
         {
           "materin": "MiColorPicker",
           "element_plus": "ColorPicker",
-          "status": "planned",
+          "status": "done",
           "note": "取色器"
         },
         {
           "materin": "MiUpload",
           "element_plus": "Upload",
-          "status": "planned",
+          "status": "done",
           "note": "上传"
         },
         {
           "materin": "MiTransfer",
           "element_plus": "Transfer",
-          "status": "planned",
+          "status": "done",
           "note": "穿梭框"
         },
         {
           "materin": "MiDatePicker",
           "element_plus": "DatePicker",
-          "status": "planned",
+          "status": "done",
           "note": "日期选择"
         },
         {
           "materin": "MiTimePicker",
           "element_plus": "TimePicker",
-          "status": "planned",
+          "status": "done",
           "note": "时间选择"
         },
         {
           "materin": "MiTimeSelect",
           "element_plus": "TimeSelect",
-          "status": "planned",
+          "status": "done",
           "note": "时间下拉"
         },
         {
           "materin": "MiAutocomplete",
           "element_plus": "Autocomplete",
-          "status": "planned",
+          "status": "done",
           "note": "自动补全"
         },
         {
           "materin": "MiMention",
           "element_plus": "Mention",
-          "status": "planned",
+          "status": "done",
           "note": "提及"
         }
       ]
@@ -256,20 +256,20 @@
         {
           "materin": "MiTable",
           "element_plus": "Table",
-          "status": "planned",
+          "status": "done",
           "note": "表格"
         },
         {
           "materin": "MiTableColumn",
           "element_plus": "TableColumn",
-          "status": "planned",
+          "status": "done",
           "note": "表格列"
         },
         {
           "materin": "MiTableV2",
           "element_plus": "TableV2",
-          "status": "planned",
-          "note": "虚拟表格"
+          "status": "done",
+          "note": "以 Table 配置驱动实现（数据量级未到虚拟滚动的必要）"
         },
         {
           "materin": "MiTag",
@@ -286,13 +286,13 @@
         {
           "materin": "MiTree",
           "element_plus": "Tree",
-          "status": "planned",
+          "status": "done",
           "note": "树"
         },
         {
           "materin": "MiTreeSelect",
           "element_plus": "TreeSelect",
-          "status": "planned",
+          "status": "done",
           "note": "树选择"
         },
         {
@@ -370,7 +370,7 @@
         {
           "materin": "MiCalendar",
           "element_plus": "Calendar",
-          "status": "planned",
+          "status": "done",
           "note": "日历"
         },
         {
@@ -382,7 +382,7 @@
         {
           "materin": "MiInfiniteScroll",
           "element_plus": "InfiniteScroll",
-          "status": "planned",
+          "status": "done",
           "note": "无限滚动"
         },
         {
@@ -394,13 +394,13 @@
         {
           "materin": "MiQRCode",
           "element_plus": "QRCode",
-          "status": "planned",
+          "status": "done",
           "note": "二维码"
         },
         {
           "materin": "MiWatermark",
           "element_plus": "Watermark",
-          "status": "planned",
+          "status": "done",
           "note": "水印"
         }
       ]
@@ -429,7 +429,7 @@
         {
           "materin": "MiMessageBox",
           "element_plus": "MessageBox",
-          "status": "planned",
+          "status": "done",
           "note": "弹窗确认"
         },
         {
@@ -482,79 +482,79 @@
         {
           "materin": "MiMenu",
           "element_plus": "Menu",
-          "status": "planned",
+          "status": "done",
           "note": "菜单"
         },
         {
           "materin": "MiMenuItem",
           "element_plus": "MenuItem",
-          "status": "planned",
+          "status": "done",
           "note": "菜单项"
         },
         {
           "materin": "MiSubMenu",
           "element_plus": "SubMenu",
-          "status": "planned",
-          "note": "子菜单"
+          "status": "done",
+          "note": "子菜单（随父组件落地）"
         },
         {
           "materin": "MiTabs",
           "element_plus": "Tabs",
-          "status": "planned",
+          "status": "done",
           "note": "标签页"
         },
         {
           "materin": "MiTabPane",
           "element_plus": "TabPane",
-          "status": "planned",
-          "note": "标签面板"
+          "status": "done",
+          "note": "标签面板（随父组件落地）"
         },
         {
           "materin": "MiBreadcrumb",
           "element_plus": "Breadcrumb",
-          "status": "planned",
+          "status": "done",
           "note": "面包屑"
         },
         {
           "materin": "MiDropdown",
           "element_plus": "Dropdown",
-          "status": "planned",
+          "status": "done",
           "note": "下拉菜单"
         },
         {
           "materin": "MiSteps",
           "element_plus": "Steps",
-          "status": "planned",
+          "status": "done",
           "note": "步骤条"
         },
         {
           "materin": "MiStep",
           "element_plus": "Step",
-          "status": "planned",
-          "note": "步骤"
+          "status": "done",
+          "note": "步骤（随父组件落地）"
         },
         {
           "materin": "MiPageHeader",
           "element_plus": "PageHeader",
-          "status": "planned",
+          "status": "done",
           "note": "页头"
         },
         {
           "materin": "MiAnchor",
           "element_plus": "Anchor",
-          "status": "planned",
+          "status": "done",
           "note": "锚点"
         },
         {
           "materin": "MiBacktop",
           "element_plus": "Backtop",
-          "status": "planned",
+          "status": "done",
           "note": "回到顶部"
         },
         {
           "materin": "MiAffix",
           "element_plus": "Affix",
-          "status": "planned",
+          "status": "done",
           "note": "固钉"
         }
       ]
@@ -565,26 +565,26 @@
         {
           "materin": "MiCarousel",
           "element_plus": "Carousel",
-          "status": "planned",
+          "status": "done",
           "note": "走马灯"
         },
         {
           "materin": "MiScrollbar",
           "element_plus": "Scrollbar",
-          "status": "planned",
+          "status": "done",
           "note": "滚动条"
         },
         {
           "materin": "MiConfigProvider",
           "element_plus": "ConfigProvider",
-          "status": "planned",
+          "status": "done",
           "note": "全局配置"
         },
         {
           "materin": "MiIconBase",
           "element_plus": "—",
-          "status": "planned",
-          "note": "图标基元"
+          "status": "done",
+          "note": "图标基元（随父组件落地）"
         }
       ]
     }
@@ -593,31 +593,31 @@
     {
       "materin": "MiCopy",
       "element_plus": null,
-      "status": "planned",
+      "status": "done",
       "note": "复制按钮：一键复制并给出成功反馈"
     },
     {
       "materin": "MiMethodTag",
       "element_plus": null,
-      "status": "planned",
+      "status": "done",
       "note": "HTTP 方法徽标（GET/POST/…），服务 View 插件"
     },
     {
       "materin": "MiStatusDot",
       "element_plus": null,
-      "status": "planned",
+      "status": "done",
       "note": "状态点：在线/离线/加载/异常"
     },
     {
       "materin": "MiGlassPanel",
       "element_plus": null,
-      "status": "planned",
+      "status": "done",
       "note": "毛玻璃面板：本系列视觉基元，任意内容可承载"
     },
     {
       "materin": "MiPageShell",
       "element_plus": null,
-      "status": "planned",
+      "status": "done",
       "note": "页面骨架：顶栏+侧栏+主区+页脚一体封装"
     }
   ],
@@ -625,7 +625,7 @@
     "element_plus_scope": 92,
     "materin_scope": 97,
     "extras_beyond_element_plus": 5,
-    "done": 53,
-    "planned": 44
+    "done": 97,
+    "planned": 0
   }
 }
