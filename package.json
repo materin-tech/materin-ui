@@ -23,7 +23,7 @@
   "scripts": {
     "dev": "vite",
     "docs:dev": "vite",
-    "docs:build": "vite build",
+    "docs:build": "vite build && node -e \"const fs=require('fs');fs.mkdirSync('docs-dist/tokens',{recursive:true});fs.copyFileSync('tokens/materin-ui.css','docs-dist/tokens/materin-ui.css')\"",
     "docs:preview": "vite preview --outDir docs-dist",
     "build:lib": "vite build --config vite.config.lib.ts",
     "build:types": "vue-tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --outDir dist",

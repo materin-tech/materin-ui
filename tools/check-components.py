@@ -75,10 +75,16 @@ def style_body(f: pathlib.Path) -> str:
 
 
 def code_body(f: pathlib.Path) -> str:
-    """代码文本：.vue 去掉 <style> 块（样式由 classes_in_styles 解析）。"""
+    """代码文本：
+    - .vue 去掉 <style> 块（样式由 style_body 处理）；
+    - .html 去掉 <pre>/<code> 内的示例（文档正文会成段引用宿主变量名与示例标记，
+      那是说明，不是真的引用）。"""
     text = f.read_text(encoding="utf-8", errors="ignore")
     if f.suffix.lower() == ".vue":
         return re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.S)
+    if f.suffix.lower() == ".html":
+        text = re.sub(r"<pre[^>]*>.*?</pre>", "\n", text, flags=re.S)
+        text = re.sub(r"<code[^>]*>.*?</code>", " ", text, flags=re.S)
     return text
 
 
@@ -218,15 +224,30 @@ def main() -> int:
                 defined_tokens.add(m.group(1))
     else:
         problems.append("找不到 CSS 令牌文件")
+    # 本仓库自己定义的局部自定义属性（--x: …）：站点/文档层允许局部别名，不算越界
+    local_defs = set()
+    for f in style_files + code_files:
+        text = strip(style_body(f) if f.suffix.lower() in STYLE_EXT else code_body(f))
+        for line in text.splitlines():
+            m = VAR_DEF.match(line)
+            if m:
+                local_defs.add(m.group(1))
+
     for f in style_files + code_files:
         if is_token_file(f):
             continue
-        body = strip(style_body(f) if f.suffix.lower() in STYLE_EXT else f.read_text(encoding="utf-8", errors="ignore"))
+        body = strip(style_body(f) if f.suffix.lower() in STYLE_EXT else code_body(f))
         for var in sorted(set(VAR_USE.findall(body))):
-            if not var.startswith("--materin-"):
-                problems.append(f"[令牌归属] {f.relative_to(repo)} 引用了非品牌变量 {var}（组件层只允许 --materin-*）")
-            elif var not in defined_tokens:
-                problems.append(f"[令牌未定义] {f.relative_to(repo)} 引用了 {var}，但令牌文件里没有")
+            if var.startswith("--materin-"):
+                if var not in defined_tokens:
+                    problems.append(f"[令牌未定义] {f.relative_to(repo)} 引用了 {var}，但令牌文件里没有")
+                continue
+            if var in local_defs:
+                continue
+            problems.append(
+                f"[令牌归属] {f.relative_to(repo)} 引用了非品牌变量 {var}"
+                "（组件层只允许 --materin-*，或本仓库自定义的属性）"
+            )
 
     # 8
     scss_vars = {}
