@@ -1,2 +1,21 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build
+dist/
+docs-dist/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
 .DS_Store
-*.swp
+
+# Env
+.env
+.env.*.local
+
+# Logs
+*.log

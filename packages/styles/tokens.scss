@@ -1,0 +1,209 @@
+// =============================================================================
+// materin-ui 设计令牌（Design Tokens）
+// =============================================================================
+// 这是 materin-ui 的视觉灵魂。所有 Vue 组件都从这里取值。
+// 改这个文件 → 整套组件视觉同步更新。
+//
+// 核心理念：先宿主、后品牌
+//   · 优先取宿主主题变量（Obsidian 的 --interactive-accent / --background-primary）
+//   · 取不到时用品牌回落值
+//   · 用户换主题，界面自动跟着变
+//
+// 参考：tokens/materin-ui.css
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. 强调色（Accent）
+// -----------------------------------------------------------------------------
+
+// 主强调色（绑定宿主 → 品牌）
+$materin-accent:        var(--materin-accent, #5b8cff);
+$materin-accent-soft:   var(--materin-accent-soft, rgba(91, 140, 255, 0.22));
+$materin-accent-strong: var(--materin-accent-strong, #4a7cef);
+$materin-on-accent:     var(--materin-on-accent, #ffffff);
+
+// 次色（青色作为科技感点缀）
+$materin-secondary:     var(--materin-secondary, #6ee7d5);
+
+// -----------------------------------------------------------------------------
+// 2. 表面与描边（Surface & Border）
+// -----------------------------------------------------------------------------
+
+// 4 层表面（从底到顶）
+$materin-surface:    var(--materin-surface, #0b0f19);        // 最底层
+$materin-surface-2:  var(--materin-surface-2, #0f1524);
+$materin-surface-3:  var(--materin-surface-3, #131b2e);       // 卡片
+$materin-surface-4:  var(--materin-surface-4, #18223a);       // 浮层
+
+$materin-border:     var(--materin-border, #23304d);
+$materin-border-strong: var(--materin-border, #23304d);
+$materin-shadow:     var(--materin-shadow, 0 10px 30px rgba(0, 0, 0, 0.35));
+
+// -----------------------------------------------------------------------------
+// 3. 文字（Text）
+// -----------------------------------------------------------------------------
+
+$materin-text:        var(--materin-text, #e7ecf5);            // 实色！不加透明度
+$materin-text-muted:  var(--materin-text-muted, #93a1bd);
+$materin-text-faint:  var(--materin-text-muted, #93a1bd);
+
+// -----------------------------------------------------------------------------
+// 4. 语义状态色（Status）
+// -----------------------------------------------------------------------------
+
+$materin-ok:    var(--materin-ok, #3a7d44);      // 成功
+$materin-warn:  var(--materin-warn, #b8860b);    // 警告
+$materin-error: var(--materin-error, #f93e3e);   // 错误
+$materin-info:  var(--materin-accent, #5b8cff);  // 信息
+
+// -----------------------------------------------------------------------------
+// 5. 形状与间距（Shape & Spacing）
+// -----------------------------------------------------------------------------
+
+$materin-radius:    var(--materin-radius, 6px);       // 默认圆角
+$materin-radius-lg: var(--materin-radius-lg, 14px);    // 大圆角
+
+$materin-space-1: 4px;
+$materin-space-2: 8px;
+$materin-space-3: 12px;
+$materin-space-4: 16px;
+$materin-space-5: 24px;
+$materin-space-6: 32px;
+$materin-space-7: 48px;
+
+// -----------------------------------------------------------------------------
+// 6. 字体（Typography）
+// -----------------------------------------------------------------------------
+
+$materin-font-ui:    var(--materin-font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif);
+$materin-font-small: var(--materin-font-small, 13px);
+$materin-font-mono:  var(--materin-font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+
+// 字号阶
+$materin-font-size-display: 48px;
+$materin-font-size-h1:      32px;
+$materin-font-size-h2:      24px;
+$materin-font-size-h3:      20px;
+$materin-font-size-body:    14px;
+$materin-font-size-small:   13px;
+$materin-font-size-caption: 12px;
+
+// 行高
+$materin-line-height-tight: 1.2;
+$materin-line-height-normal: 1.5;
+$materin-line-height-loose: 1.7;
+
+// 字重
+$materin-font-weight-regular: 400;
+$materin-font-weight-medium:  500;
+$materin-font-weight-bold:    700;
+
+// -----------------------------------------------------------------------------
+// 7. 玻璃效果（Glass）— Materin 标志性视觉
+// -----------------------------------------------------------------------------
+
+$materin-glass-bg:         var(--materin-glass-bg, rgba(11, 15, 25, 0.74));
+$materin-glass-bg-strong:  var(--materin-glass-bg-strong, rgba(11, 15, 25, 0.90));
+$materin-glass-bg-subtle:  var(--materin-glass-bg-subtle, rgba(15, 21, 36, 0.66));
+$materin-glass-border:     var(--materin-glass-border, rgba(35, 48, 77, 0.80));
+$materin-glass-highlight:  var(--materin-glass-highlight, rgba(255, 255, 255, 0.12));
+$materin-glass-blur:       var(--materin-glass-blur, blur(20px) saturate(180%));
+$materin-glass-blur-sm:    var(--materin-glass-blur-sm, blur(12px) saturate(160%));
+
+// 阴影两级
+$materin-elev-1: 0 1px 2px rgba(0, 0, 0, 0.16), 0 8px 24px rgba(0, 0, 0, 0.18);
+$materin-elev-2: 0 2px 6px rgba(0, 0, 0, 0.20), 0 18px 48px rgba(0, 0, 0, 0.30);
+
+// -----------------------------------------------------------------------------
+// 8. 动效（Motion）
+// -----------------------------------------------------------------------------
+
+$materin-duration-fast:   150ms;
+$materin-duration-normal: 200ms;
+$materin-duration-slow:   300ms;
+
+$materin-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+$materin-ease-in:       cubic-bezier(0, 0, 0.2, 1);
+$materin-ease-out:      cubic-bezier(0.4, 0, 1, 1);
+
+// =============================================================================
+// 玻璃面 mixin（核心视觉工具）
+// =============================================================================
+
+@mixin materin-glass($strength: 'normal') {
+  @if $strength == 'strong' {
+    background: $materin-glass-bg-strong;
+  } @else if $strength == 'subtle' {
+    background: $materin-glass-bg-subtle;
+  } @else {
+    background: $materin-glass-bg;
+  }
+
+  backdrop-filter: $materin-glass-blur;
+  -webkit-backdrop-filter: $materin-glass-blur;
+
+  border: 1px solid $materin-glass-border;
+}
+
+@mixin materin-glass-sm {
+  background: $materin-glass-bg-subtle;
+  backdrop-filter: $materin-glass-blur-sm;
+  -webkit-backdrop-filter: $materin-glass-blur-sm;
+  border: 1px solid $materin-glass-border;
+}
+
+// 玻璃 + 高光边（Hero 区、特殊卡片）
+@mixin materin-glass-hero {
+  background: $materin-glass-bg;
+  backdrop-filter: $materin-glass-blur;
+  -webkit-backdrop-filter: $materin-glass-blur;
+  border: 1px solid $materin-glass-border;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg,
+                $materin-glass-highlight 0%,
+                transparent 50%);
+    border-radius: inherit;
+  }
+}
+
+// =============================================================================
+// 命名契约映射（CSS 类 → 组件）
+// =============================================================================
+// 组件类名遵循：materin-<scope>-<component>[__part][--variant]
+// scope: ui | site | office | view | ctx
+// =============================================================================
+
+// 组件类名辅助 mixin
+@mixin materin-component-base {
+  font-family: $materin-font-ui;
+  font-size: $materin-font-size-body;
+  color: $materin-text;
+  line-height: $materin-line-height-normal;
+  transition: all $materin-duration-normal $materin-ease-standard;
+}
+
+// =============================================================================
+// 降级：宿主不支持 backdrop-filter 时，玻璃面回退到不透明
+// =============================================================================
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root {
+    --materin-glass-bg: var(--materin-surface, #0b0f19);
+    --materin-glass-bg-strong: var(--materin-surface, #0b0f19);
+    --materin-glass-bg-subtle: var(--materin-surface-2, #0f1524);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --materin-glass-bg: var(--materin-surface, #0b0f19);
+    --materin-glass-bg-strong: var(--materin-surface, #0b0f19);
+    --materin-glass-bg-subtle: var(--materin-surface-2, #0f1524);
+  }
+}

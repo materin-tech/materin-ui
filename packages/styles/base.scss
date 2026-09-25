@@ -1,0 +1,192 @@
+// =============================================================================
+// materin-ui 基础样式（Base）
+// =============================================================================
+// 全局 reset、排版、容器、通用工具类
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// 重置（Reset）
+// -----------------------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--mi-font-family-base);
+  font-size: var(--mi-font-size-body-m, 14px);
+  line-height: 1.65;
+  color: var(--mi-text-regular);
+  background-color: var(--mi-bg-page);
+  min-height: 100vh;
+  transition: background-color var(--mi-duration-normal) var(--mi-ease-standard),
+              color var(--mi-duration-normal) var(--mi-ease-standard);
+}
+
+// 链接
+a {
+  color: var(--mi-text-link);
+  text-decoration: none;
+  transition: color var(--mi-duration-fast) var(--mi-ease-standard);
+
+  &:hover {
+    color: var(--mi-color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--mi-color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+// 标题
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mi-font-family-display);
+  color: var(--mi-text-primary);
+  font-weight: var(--mi-font-weight-semibold);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+h1 { font-size: var(--mi-font-size-h1); font-weight: 700; line-height: 1.15; }
+h2 { font-size: var(--mi-font-size-h2); }
+h3 { font-size: var(--mi-font-size-h3); }
+h4 { font-size: var(--mi-font-size-h4); }
+
+// 段落
+p {
+  line-height: 1.65;
+  color: var(--mi-text-regular);
+}
+
+// 代码（AI 输出的科技感）
+code, pre, kbd, samp {
+  font-family: var(--mi-font-family-mono);
+}
+
+code {
+  padding: 2px 6px;
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--mi-color-primary);
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+pre {
+  padding: 16px;
+  background: var(--mi-bg-surface);
+  border: 1px solid var(--mi-border-light);
+  border-radius: var(--mi-radius-sm);
+  overflow-x: auto;
+  line-height: 1.5;
+
+  code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    border-radius: 0;
+  }
+}
+
+// 按钮重置
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+// 输入框
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+// 列表
+ul, ol {
+  list-style: none;
+}
+
+// 图片
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// 容器（Container）
+// -----------------------------------------------------------------------------
+
+.mi-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--mi-spacing-5);
+  padding-right: var(--mi-spacing-5);
+
+  @media (min-width: 768px) {
+    padding-left: var(--mi-spacing-6);
+    padding-right: var(--mi-spacing-6);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 文本工具类（Text Utilities）
+// -----------------------------------------------------------------------------
+
+.mi-text-primary  { color: var(--mi-text-primary); }
+.mi-text-regular  { color: var(--mi-text-regular); }
+.mi-text-secondary { color: var(--mi-text-secondary); }
+.mi-text-disabled { color: var(--mi-text-disabled); }
+.mi-text-link     { color: var(--mi-text-link); }
+
+.mi-text-mono     { font-family: var(--mi-font-family-mono); }
+
+// -----------------------------------------------------------------------------
+// 渐变文本（AI 渐变标题）
+// -----------------------------------------------------------------------------
+
+.mi-text-gradient {
+  background: linear-gradient(135deg,
+              var(--mi-color-primary) 0%,
+              var(--mi-color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+// -----------------------------------------------------------------------------
+// 焦点环（Focus Ring）
+// -----------------------------------------------------------------------------
+
+:focus-visible {
+  outline: 2px solid var(--mi-color-primary);
+  outline-offset: 2px;
+}
+
+// -----------------------------------------------------------------------------
+// 选择高亮
+// -----------------------------------------------------------------------------
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.24);
+  color: var(--mi-text-primary);
+}

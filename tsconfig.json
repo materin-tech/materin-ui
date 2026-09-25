@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": ["node", "vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["packages/*"],
+      "@materin-ui/*": ["packages/materin-ui/*"]
+    }
+  },
+  "include": [
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    "docs/**/*.ts",
+    "docs/**/*.vue"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
