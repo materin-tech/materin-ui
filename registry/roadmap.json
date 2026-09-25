@@ -113,13 +113,13 @@
         {
           "materin": "MiForm",
           "element_plus": "Form",
-          "status": "planned",
+          "status": "done",
           "note": "表单"
         },
         {
           "materin": "MiFormItem",
           "element_plus": "FormItem",
-          "status": "planned",
+          "status": "done",
           "note": "表单项"
         },
         {
@@ -131,25 +131,25 @@
         {
           "materin": "MiInputNumber",
           "element_plus": "InputNumber",
-          "status": "planned",
+          "status": "done",
           "note": "数字输入"
         },
         {
           "materin": "MiSelect",
           "element_plus": "Select",
-          "status": "planned",
+          "status": "done",
           "note": "下拉选择"
         },
         {
           "materin": "MiOption",
           "element_plus": "Option",
-          "status": "planned",
+          "status": "done",
           "note": "下拉项"
         },
         {
           "materin": "MiOptionGroup",
           "element_plus": "OptionGroup",
-          "status": "planned",
+          "status": "done",
           "note": "下拉分组"
         },
         {
@@ -161,43 +161,43 @@
         {
           "materin": "MiCheckbox",
           "element_plus": "Checkbox",
-          "status": "planned",
+          "status": "done",
           "note": "多选框"
         },
         {
           "materin": "MiCheckboxGroup",
           "element_plus": "CheckboxGroup",
-          "status": "planned",
+          "status": "done",
           "note": "多选组"
         },
         {
           "materin": "MiRadio",
           "element_plus": "Radio",
-          "status": "planned",
+          "status": "done",
           "note": "单选框"
         },
         {
           "materin": "MiRadioGroup",
           "element_plus": "RadioGroup",
-          "status": "planned",
+          "status": "done",
           "note": "单选组"
         },
         {
           "materin": "MiSwitch",
           "element_plus": "Switch",
-          "status": "planned",
+          "status": "done",
           "note": "开关"
         },
         {
           "materin": "MiSlider",
           "element_plus": "Slider",
-          "status": "planned",
+          "status": "done",
           "note": "滑块"
         },
         {
           "materin": "MiRate",
           "element_plus": "Rate",
-          "status": "planned",
+          "status": "done",
           "note": "评分"
         },
         {
@@ -625,7 +625,7 @@
     "element_plus_scope": 92,
     "materin_scope": 97,
     "extras_beyond_element_plus": 5,
-    "done": 21,
-    "planned": 76
+    "done": 34,
+    "planned": 63
   }
 }

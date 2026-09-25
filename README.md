@@ -43,7 +43,11 @@
 | 基础 | Badge / Avatar | `materin-ui-badge` / `materin-ui-avatar` |
 | 展示 | Skeleton / SkeletonItem / Empty | `materin-ui-skeleton` / `materin-ui-skeleton-item` / `materin-ui-empty` |
 | 展示 | Card | `materin-ui-card` |
+| 表单 | Form / FormItem | `materin-ui-form` / `materin-ui-form-item` |
 | 表单 | Input 输入框 | `materin-ui-field` |
+| 表单 | InputNumber / Slider / Rate | `materin-ui-input-number` / `materin-ui-slider` / `materin-ui-rate` |
+| 表单 | Select / Option / OptionGroup | `materin-ui-select` / `materin-ui-select-option` / `materin-ui-select-group` |
+| 表单 | Checkbox / CheckboxGroup / Radio / RadioGroup / Switch | `materin-ui-checkbox` / `materin-ui-checkbox-group` / `materin-ui-radio` / `materin-ui-radio-group` / `materin-ui-switch` |
 | 展示 | Tag 标签 | `materin-ui-tag` |
 | 基础 | Button 按钮 | `materin-ui-btn` |
 

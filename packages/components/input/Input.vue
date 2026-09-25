@@ -5,7 +5,7 @@
       <span v-if="required" class="materin-ui-field__required">*</span>
     </label>
 
-    <div :class="['materin-ui-field', `materin-ui-field--${size}`, { 'materin-ui-field--disabled': disabled }]">
+    <div :class="['materin-ui-field', `materin-ui-field--${resolvedSize}`, { 'materin-ui-field--disabled': isDisabled, 'materin-ui-field--invalid': !!item?.isError }]">
       <span v-if="$slots.prefix" class="materin-ui-field__prefix">
         <slot name="prefix" />
       </span>
@@ -17,8 +17,10 @@
         :type="realType"
         :value="modelValue"
         :placeholder="placeholder"
-        :disabled="disabled"
+        :disabled="isDisabled"
         :readonly="readonly"
+        :aria-invalid="ariaInvalid"
+        :aria-describedby="ariaDescribedby"
         :maxlength="maxlength"
         @input="handleInput"
         @focus="handleFocus"
@@ -44,7 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, inject, ref } from 'vue'
+import { FORM_ITEM_KEY } from '../_shared/form'
 
 interface InputProps {
   modelValue?: string | number
@@ -80,7 +83,15 @@ const props = withDefaults(defineProps<InputProps>(), {
 
 const emit = defineEmits<InputEmits>()
 
-const inputId = computed(() => `materin-ui-field-${Math.random().toString(36).slice(2, 9)}`)
+// 在 MiFormItem 内使用时，尺寸/禁用/错误/aria 交给表单项统一下发
+const item = inject(FORM_ITEM_KEY, null)
+
+const fallbackId = `materin-ui-field-${Math.random().toString(36).slice(2, 9)}`
+const inputId = computed(() => item?.inputId || fallbackId)
+const isDisabled = computed(() => props.disabled || (item?.disabled ?? false))
+const ariaDescribedby = computed(() => item?.describedby || undefined)
+const ariaInvalid = computed(() => (item?.isError ? true : undefined))
+const resolvedSize = computed(() => item?.size || props.size)
 const inputRef = ref<HTMLInputElement>()
 const focused = ref(false)
 const passwordVisible = ref(false)
@@ -98,6 +109,8 @@ const realType = computed(() => {
 const handleInput = (e: Event) => {
   const target = e.target as HTMLInputElement
   emit('update:modelValue', target.value)
+  emit('change', target.value)
+  item?.notifyChange()
 }
 
 const handleFocus = (e: FocusEvent) => {
@@ -108,6 +121,7 @@ const handleFocus = (e: FocusEvent) => {
 const handleBlur = (e: FocusEvent) => {
   focused.value = false
   emit('blur', e)
+  item?.notifyBlur()
 }
 
 const handleClear = () => {
@@ -165,6 +179,10 @@ defineExpose({ focus, blur })
     background: $materin-surface-2;
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &--invalid {
+    border-color: $materin-error;
   }
 
   &--sm { height: 30px; }

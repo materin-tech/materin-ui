@@ -63,3 +63,15 @@
 - 新增 `tools/gen-index.py`：库主入口按组件目录自动生成，新增组件不必手改 import
 - 新增唤醒式响应：`_shared/breakpoint.ts`（客户端断点，ResizeObserver 于窗口 resize 去抖 80ms）
 - 全部组件只引用令牌、零裸色值，并登记进 `registry/components.json`（校验脚本作为门禁）
+## 0.4.0 — 2026-09
+加上**表单层**，组件数 21 → **34**。
+
+- 新增表单与选择组件 13 个：
+  - Form / FormItem：自研轻量校验（必填 / 类型 / 长度 / 区间 / 正则 / 自定义，支持 blur 与 change 触发），
+    `validate()` / `validateField()` / `resetFields()` / `clearValidate()` 齐全，标签位置三档
+  - InputNumber（步进 / 上下限 / 精度 / 键盘上下键）、Select + Option + OptionGroup（单选多选、
+    键盘导航、点击外部关闭、分组标题）、Checkbox + CheckboxGroup、Radio + RadioGroup、
+    Switch（开关文案 / 加载态）、Slider（拖动 / 点轨道 / 键盘 / 双滑块区间）、Rate
+- Input 接入表单项上下文：尺寸、禁用、错误态与 aria 由 FormItem 统一下发
+- 文档站新增「表单与输入控件」实况区（真校验、真报错、真下拉）
+- 路线图更新：**已完成 34 / 待做 63**（对标 Element Plus 92 项 + 本系列额外 5 件）
